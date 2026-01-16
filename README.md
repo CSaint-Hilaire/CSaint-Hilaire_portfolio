@@ -1,6 +1,6 @@
 # Hi, I'm Cadisha
 
-## Bioinformatics & Data Engineer — Spatial Omics & Imaging (Health)
+### **Bioinformatics & Data Engineer** — Spatial Omics & Imaging (Health)
 
 I design **production-ready data pipelines** for spatial transcriptomics, biomedical imaging and health data, with a strong focus on **reproducibility, scalability and real-world industry use cases**.
 
