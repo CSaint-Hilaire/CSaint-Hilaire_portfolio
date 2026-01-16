@@ -36,7 +36,7 @@ A fully automated and reproducible pipeline for spatial transcriptomics analysis
 
 ---
 
-### 🖼 Multimodal Imaging × Transcriptomics Analysis
+### Multimodal Imaging × Transcriptomics Analysis
 **Microscopy · Spatial omics · Python · AnnData · Zarr**
 
 Integration of morphological features extracted from images with spatial gene expression to enable **multi-modal biological insights**.
@@ -45,7 +45,7 @@ Integration of morphological features extracted from images with spatial gene ex
 
 ---
 
-### ☁️ Health Data Engineering Platform (Mini-Prod)
+### Health Data Engineering Platform (Mini-Prod)
 **Python · PostgreSQL · FastAPI · Docker**
 
 A lightweight data platform simulating an internal biotech data stack: ingestion, validation, storage and programmatic access to omics results.
