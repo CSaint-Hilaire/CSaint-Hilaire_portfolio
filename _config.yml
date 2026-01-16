@@ -1,116 +1,15 @@
-# =========================
-# Site identity
-# =========================
-title: "Cadisha Saint-Hilaire"
-subtitle: "Bioinformatics & Data Engineer — Spatial Omics & Imaging (Health)"
-name: "Cadisha Saint-Hilaire"
-description: >
-  Bioinformatics & Data Engineer specializing in spatial transcriptomics,
-  biomedical imaging and production-ready health data pipelines.
+title: Cadisha | Bioinfo & Data Engineer
+description: Spatial Omics & Data Engineering for Health
+remote_theme: pages-themes/minimal@v0.2.0 # Base propre et pro
+google_analytics: # Ajoutez votre ID si besoin
+show_downloads: false
 
-url: "https://yourname.github.io"
-baseurl: ""
+# Personnalisation
+author: Cadisha
+email: sainthilaire.cadisha@exemple.com
+linkedin_username: Cadisha Saint-Hilaire
+github_username: CSaint-Hilaire
 
-# =========================
-# Theme
-# =========================
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "air"   # clair, moderne, très pro
-# autres bons choix : "default", "dark"
-
-# =========================
-# Author profile (sidebar)
-# =========================
-author:
-  name: "Cadisha Saint-Hilaire"
-  avatar: "/assets/images/avatar.jpg"   # optionnel mais recommandé
-  bio: >
-    Bioinformatics & Data Engineer focused on spatial omics,
-    imaging and scalable health data platforms.
-  location: "Paris, France"
-  links:
-    - label: "LinkedIn"
-      icon: "fab fa-linkedin"
-      url: "https://www.linkedin.com/in/yourprofile"
-    - label: "GitHub"
-      icon: "fab fa-github"
-      url: "https://github.com/yourusername"
-
-# =========================
-# Navigation
-# =========================
-navigation:
-  main:
-    - title: "Home"
-      url: /
-    - title: "Projects"
-      url: /projects/
-    - title: "Spatial Omics"
-      url: /spatial-omics/
-    - title: "Imaging"
-      url: /imaging/
-    - title: "Data Engineering"
-      url: /data-engineering/
-    - title: "About"
-      url: /about/
-
-# =========================
-# Layout defaults
-# =========================
-defaults:
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-      read_time: false
-      comments: false
-      share: false
-      toc: true
-      toc_sticky: true
-
-# =========================
-# Markdown & syntax
-# =========================
-markdown: kramdown
-highlighter: rouge
-
-# =========================
-# Plugins (GitHub Pages safe)
-# =========================
+# Plugins pour un rendu propre
 plugins:
-  - jekyll-include-cache
   - jekyll-seo-tag
-  - jekyll-sitemap
-
-# =========================
-# SEO / Locale
-# =========================
-locale: "en-US"
-timezone: "Europe/Paris"
-
-# =========================
-# Footer
-# =========================
-footer:
-  links:
-    - label: "LinkedIn"
-      icon: "fab fa-linkedin"
-      url: "https://www.linkedin.com/in/yourprofile"
-    - label: "GitHub"
-      icon: "fab fa-github"
-      url: "https://github.com/yourusername"
-
-# =========================
-# Custom styling
-# =========================
-custom_css:
-  - assets/css/custom.css
-
-# =========================
-# UX options
-# =========================
-breadcrumbs: true
-search: false
-paginate: 5
