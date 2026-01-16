@@ -10,6 +10,8 @@ description: >
 
 url: "https://yourname.github.io"
 baseurl: ""
+custom_css:
+  - assets/css/custom.css
 
 # =========================
 # Theme
