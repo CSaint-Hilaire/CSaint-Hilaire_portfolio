@@ -1,33 +1,32 @@
 # =========================
-# Site settings
+# Site identity
 # =========================
 title: "Cadisha Saint-Hilaire"
 subtitle: "Bioinformatics & Data Engineer — Spatial Omics & Imaging (Health)"
 name: "Cadisha Saint-Hilaire"
 description: >
-  Bioinformatics & Data Engineer specialized in spatial transcriptomics,
+  Bioinformatics & Data Engineer specializing in spatial transcriptomics,
   biomedical imaging and production-ready health data pipelines.
 
 url: "https://yourname.github.io"
 baseurl: ""
-custom_css:
-  - assets/css/custom.css
 
 # =========================
 # Theme
 # =========================
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default" # other options: dark, neon, contrast, air
+minimal_mistakes_skin: "air"   # clair, moderne, très pro
+# autres bons choix : "default", "dark"
 
 # =========================
-# Author
+# Author profile (sidebar)
 # =========================
 author:
   name: "Cadisha Saint-Hilaire"
-  avatar: "/assets/images/avatar.jpg" # optional
+  avatar: "/assets/images/avatar.jpg"   # optionnel mais recommandé
   bio: >
-    Bioinformatics & Data Engineer focused on spatial omics, imaging
-    and reproducible data platforms for biotech and medtech.
+    Bioinformatics & Data Engineer focused on spatial omics,
+    imaging and scalable health data platforms.
   location: "Paris, France"
   links:
     - label: "LinkedIn"
@@ -36,9 +35,6 @@ author:
     - label: "GitHub"
       icon: "fab fa-github"
       url: "https://github.com/yourusername"
-    - label: "Email"
-      icon: "fas fa-envelope"
-      url: "mailto:your@email.com"
 
 # =========================
 # Navigation
@@ -81,7 +77,7 @@ markdown: kramdown
 highlighter: rouge
 
 # =========================
-# Plugins (GitHub Pages compatible)
+# Plugins (GitHub Pages safe)
 # =========================
 plugins:
   - jekyll-include-cache
@@ -89,7 +85,7 @@ plugins:
   - jekyll-sitemap
 
 # =========================
-# SEO
+# SEO / Locale
 # =========================
 locale: "en-US"
 timezone: "Europe/Paris"
@@ -107,8 +103,14 @@ footer:
       url: "https://github.com/yourusername"
 
 # =========================
-# Misc
+# Custom styling
 # =========================
-search: false
+custom_css:
+  - assets/css/custom.css
+
+# =========================
+# UX options
+# =========================
 breadcrumbs: true
+search: false
 paginate: 5
