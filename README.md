@@ -123,8 +123,8 @@ Target sectors:
 -  Open to Paris-based roles and high-quality remote opportunities
 
  **Contact**
-- LinkedIn: [Your LinkedIn URL]
-- GitHub: [Your GitHub URL]
+- LinkedIn: [Cadisha Saint-Hilaire](https://www.linkedin.com/in/cadisha-saint-hilaire-456326203/)
+- GitHub: [CSaint-Hilaire](https://github.com/CSaint-Hilaire)
 
 ---
 
