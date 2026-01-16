@@ -1,0 +1,112 @@
+# =========================
+# Site settings
+# =========================
+title: "Cadisha Saint-Hilaire"
+subtitle: "Bioinformatics & Data Engineer — Spatial Omics & Imaging (Health)"
+name: "Cadisha Saint-Hilaire"
+description: >
+  Bioinformatics & Data Engineer specialized in spatial transcriptomics,
+  biomedical imaging and production-ready health data pipelines.
+
+url: "https://yourname.github.io"
+baseurl: ""
+
+# =========================
+# Theme
+# =========================
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default" # other options: dark, neon, contrast, air
+
+# =========================
+# Author
+# =========================
+author:
+  name: "Cadisha Saint-Hilaire"
+  avatar: "/assets/images/avatar.jpg" # optional
+  bio: >
+    Bioinformatics & Data Engineer focused on spatial omics, imaging
+    and reproducible data platforms for biotech and medtech.
+  location: "Paris, France"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/yourprofile"
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/yourusername"
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:your@email.com"
+
+# =========================
+# Navigation
+# =========================
+navigation:
+  main:
+    - title: "Home"
+      url: /
+    - title: "Projects"
+      url: /projects/
+    - title: "Spatial Omics"
+      url: /spatial-omics/
+    - title: "Imaging"
+      url: /imaging/
+    - title: "Data Engineering"
+      url: /data-engineering/
+    - title: "About"
+      url: /about/
+
+# =========================
+# Layout defaults
+# =========================
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: false
+      share: false
+      toc: true
+      toc_sticky: true
+
+# =========================
+# Markdown & syntax
+# =========================
+markdown: kramdown
+highlighter: rouge
+
+# =========================
+# Plugins (GitHub Pages compatible)
+# =========================
+plugins:
+  - jekyll-include-cache
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# =========================
+# SEO
+# =========================
+locale: "en-US"
+timezone: "Europe/Paris"
+
+# =========================
+# Footer
+# =========================
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/yourprofile"
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/yourusername"
+
+# =========================
+# Misc
+# =========================
+search: false
+breadcrumbs: true
+paginate: 5
