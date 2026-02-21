@@ -5,420 +5,510 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cadisha Saint-Hilaire | Bioinformatics & Data Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0a0f1e;
-    --deep: #0d1428;
-    --teal: #00c4a1;
-    --teal-dim: rgba(0,196,161,0.15);
-    --teal-glow: rgba(0,196,161,0.4);
-    --blue: #1a5cff;
-    --text: #c8d6e8;
-    --text-dim: #6b7fa3;
-    --white: #eef3ff;
-    --card-bg: rgba(255,255,255,0.03);
-    --card-border: rgba(0,196,161,0.12);
+    /* Palette crème */
+    --off-white:  #f7f4ef;
+    --parchment:  #efe9df;
+    --parchment-2:#e6dfd3;
+    --parchment-3:#d8cfc2;
+
+    /* Encre */
+    --ink:        #1e1e1e;
+    --ink-soft:   #3a3a3a;
+    --ink-mid:    #5c5c5c;
+    --ink-dim:    #8c8c8c;
+
+    /* Vert sauge / olive */
+    --sage:       #5a7a5e;
+    --sage-deep:  #3d5e41;
+    --sage-light: #e8f0e8;
+    --sage-mid:   #c4d4c5;
+    --olive:      #7a8c4a;
+    --olive-light:#f0f2e4;
+
+    /* Règles */
+    --rule:       rgba(30,30,30,0.1);
+    --rule-soft:  rgba(30,30,30,0.06);
+
+    --serif:  'Cormorant Garamond', 'Georgia', serif;
+    --sans:   'Outfit', system-ui, sans-serif;
+    --mono:   'JetBrains Mono', monospace;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--navy);
-    color: var(--text);
-    font-family: 'Lora', Georgia, serif;
+    background: var(--off-white);
+    color: var(--ink-soft);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 1rem;
     line-height: 1.75;
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* ─── BACKGROUND ─── */
+  /* ── GRAIN SUBTIL ── */
   body::before {
     content: '';
-    position: fixed; inset: 0;
-    background:
-      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(26,92,255,0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0,196,161,0.08) 0%, transparent 60%);
-    pointer-events: none; z-index: 0;
+    position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  /* ─── NAV ─── */
+  /* ──────────────────────────────────────
+     NAV
+  ────────────────────────────────────── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 4rem;
-    background: rgba(10,15,30,0.85);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--card-border);
-    transition: all 0.3s;
+    padding: 0 4rem;
+    height: 64px;
+    background: rgba(247,244,239,0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--rule);
   }
 
   .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800; font-size: 1.1rem;
-    color: var(--white);
-    letter-spacing: 0.02em;
-  }
-  .nav-logo span { color: var(--teal); }
-
-  .nav-links {
-    display: flex; gap: 0.25rem; list-style: none;
+    font-family: var(--serif);
+    font-size: 1.15rem; font-weight: 600;
+    color: var(--ink); letter-spacing: 0.01em;
   }
 
+  .nav-links { display: flex; list-style: none; }
   .nav-links a {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--text-dim);
-    text-decoration: none;
-    padding: 0.5rem 0.9rem;
-    border-radius: 4px;
-    transition: all 0.25s;
-    border: 1px solid transparent;
+    font-family: var(--mono); font-size: 0.68rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-dim); text-decoration: none;
+    padding: 0 1rem; height: 64px;
+    display: flex; align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
   }
-  .nav-links a:hover {
-    color: var(--teal);
-    border-color: var(--card-border);
-    background: var(--teal-dim);
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--sage-deep); border-bottom-color: var(--sage);
   }
 
-  /* ─── SECTIONS ─── */
-  section { position: relative; z-index: 1; }
-
-  /* ─── HERO ─── */
+  /* ──────────────────────────────────────
+     HERO
+  ────────────────────────────────────── */
   #hero {
     min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 7rem 4rem 4rem;
-    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--rule);
+    padding-top: 64px;
   }
 
-  .hero-content { max-width: 780px; }
-
-  .hero-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--teal);
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    margin-bottom: 1.5rem;
-    animation: fadeUp 0.6s ease both;
+  .hero-left {
+    padding: 7rem 4rem 5rem;
+    border-right: 1px solid var(--rule);
+    display: flex; flex-direction: column; justify-content: center;
   }
-  .hero-tag::before {
-    content: '';
-    display: block; width: 28px; height: 1px;
-    background: var(--teal);
+
+  .hero-eyebrow {
+    font-family: var(--mono); font-size: 0.68rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 1.8rem;
+    display: flex; align-items: center; gap: 0.9rem;
+    animation: up 0.6s ease both;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 28px; height: 1px; background: var(--sage);
   }
 
   h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    font-weight: 800; line-height: 1.05;
-    color: var(--white);
-    margin-bottom: 1rem;
-    animation: fadeUp 0.6s 0.1s ease both;
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 5vw, 5.8rem);
+    font-weight: 600; line-height: 1.05;
+    color: var(--ink); letter-spacing: -0.01em;
+    margin-bottom: 1.8rem;
+    animation: up 0.6s 0.08s ease both;
   }
+  h1 em { font-style: italic; color: var(--sage-deep); }
 
-  h1 em {
-    font-style: normal;
-    background: linear-gradient(135deg, var(--teal), var(--blue));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  .hero-desc {
+    font-size: 1rem; color: var(--ink-mid);
+    line-height: 1.8; max-width: 460px;
+    margin-bottom: 2.8rem;
+    animation: up 0.6s 0.16s ease both;
   }
-
-  .hero-sub {
-    font-size: 1.15rem; color: var(--text-dim);
-    max-width: 560px; margin-bottom: 2.5rem;
-    animation: fadeUp 0.6s 0.2s ease both;
-  }
-
-  .hero-chips {
-    display: flex; flex-wrap: wrap; gap: 0.6rem;
-    margin-bottom: 3rem;
-    animation: fadeUp 0.6s 0.3s ease both;
-  }
-
-  .chip {
-    font-family: 'DM Mono', monospace; font-size: 0.75rem;
-    padding: 0.35rem 0.8rem;
-    border: 1px solid var(--card-border);
-    border-radius: 100px;
-    color: var(--text-dim);
-    background: var(--card-bg);
-    transition: all 0.25s;
-  }
-  .chip:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-dim); }
 
   .hero-cta {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-    animation: fadeUp 0.6s 0.4s ease both;
+    display: flex; gap: 0.8rem;
+    animation: up 0.6s 0.24s ease both;
   }
 
   .btn {
-    font-family: 'DM Mono', monospace; font-size: 0.82rem;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 0.85rem 2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.3s;
-    cursor: pointer;
+    font-family: var(--mono); font-size: 0.68rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.75rem 1.6rem; border-radius: 2px;
+    text-decoration: none; transition: all 0.25s; cursor: pointer;
   }
-  .btn-primary {
-    background: var(--teal); color: var(--navy); font-weight: 700;
-    border: 2px solid var(--teal);
-  }
-  .btn-primary:hover { background: transparent; color: var(--teal); box-shadow: 0 0 24px var(--teal-glow); }
-  .btn-ghost {
-    background: transparent; color: var(--text);
-    border: 2px solid var(--card-border);
-  }
-  .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+  .btn-primary { background: var(--sage-deep); color: var(--off-white); border: 1.5px solid var(--sage-deep); }
+  .btn-primary:hover { background: var(--ink); border-color: var(--ink); }
+  .btn-ghost { background: transparent; color: var(--ink-mid); border: 1.5px solid var(--parchment-2); }
+  .btn-ghost:hover { border-color: var(--sage); color: var(--sage-deep); }
 
-  /* ─── SECTION LAYOUT ─── */
-  .section-inner {
-    max-width: 1100px; margin: 0 auto;
-    padding: 6rem 4rem;
+  /* Hero right — grille de stats */
+  .hero-right {
+    display: grid; grid-template-rows: 1fr 1fr;
+    background: var(--parchment);
   }
+
+  .hero-stat {
+    padding: 3.5rem 4rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .hero-stat:last-child { border-bottom: none; }
+
+  .hero-stat-label {
+    font-family: var(--mono); font-size: 0.65rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--ink-dim); margin-bottom: 0.5rem;
+  }
+  .hero-stat-value {
+    font-family: var(--serif); font-size: 2.2rem;
+    font-weight: 600; color: var(--ink); line-height: 1.1;
+  }
+  .hero-stat-value em { font-style: italic; color: var(--sage-deep); }
+  .hero-stat-sub {
+    font-size: 0.85rem; color: var(--ink-dim); margin-top: 0.4rem;
+  }
+
+  /* chips */
+  .hero-chips {
+    display: flex; flex-wrap: wrap; gap: 0.45rem;
+    padding: 2.5rem 4rem;
+    border-top: 1px solid var(--rule);
+    animation: up 0.6s 0.32s ease both;
+  }
+  .chip {
+    font-family: var(--mono); font-size: 0.67rem;
+    padding: 0.28rem 0.7rem;
+    border: 1px solid var(--parchment-3);
+    border-radius: 2px; color: var(--ink-mid);
+    background: var(--off-white);
+    transition: all 0.2s;
+  }
+  .chip:hover { border-color: var(--sage); color: var(--sage-deep); background: var(--sage-light); }
+
+  /* ──────────────────────────────────────
+     LAYOUT GÉNÉRAL
+  ────────────────────────────────────── */
+  .section-inner { max-width: 1080px; margin: 0 auto; padding: 6rem 4rem; }
 
   .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--teal);
-    display: flex; align-items: center; gap: 0.6rem;
-    margin-bottom: 1rem;
+    font-family: var(--mono); font-size: 0.67rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 0.7rem;
   }
-  .section-label::before {
-    content: ''; display: block; width: 28px; height: 1px; background: var(--teal);
-  }
+  .section-label::before { content: ''; display: block; width: 22px; height: 1px; background: var(--sage); }
 
   h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 800; color: var(--white);
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    font-weight: 600; color: var(--ink);
+    letter-spacing: -0.02em; line-height: 1.1;
     margin-bottom: 3rem;
-    line-height: 1.1;
   }
 
-  /* ─── ABOUT ─── */
-  #about { background: rgba(13,20,40,0.6); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
+  /* ──────────────────────────────────────
+     ABOUT
+  ────────────────────────────────────── */
+  #about { border-bottom: 1px solid var(--rule); }
 
   .about-grid {
+    display: grid; grid-template-columns: 1.8fr 1fr;
+    gap: 5rem; align-items: start;
+  }
+
+  .about-text p {
+    font-size: 1.02rem; color: var(--ink-mid);
+    margin-bottom: 1.3rem; line-height: 1.85;
+  }
+  .about-text p em { font-style: italic; color: var(--ink); font-family: var(--serif); font-size: 1.08rem; }
+  .about-text p strong { color: var(--sage-deep); font-weight: 500; }
+
+  .about-card {
+    background: var(--parchment);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .about-card-row {
+    padding: 1rem 1.4rem;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .about-card-row:last-child { border-bottom: none; }
+  .about-card-label {
+    font-family: var(--mono); font-size: 0.62rem;
+    letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--ink-dim); margin-bottom: 0.25rem;
+  }
+  .about-card-value {
+    font-family: var(--serif); font-size: 0.98rem;
+    color: var(--ink); font-weight: 500;
+  }
+
+  /* ──────────────────────────────────────
+     SKILLS
+  ────────────────────────────────────── */
+  #skills { background: var(--parchment); border-bottom: 1px solid var(--rule); }
+
+  .skills-table {
+    border: 1px solid var(--rule);
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .skill-cell {
+    padding: 2rem 2.2rem;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.2s;
+  }
+  .skill-cell:nth-child(2n) { border-right: none; }
+  .skill-cell:nth-last-child(-n+2) { border-bottom: none; }
+  .skill-cell:hover { background: var(--off-white); }
+
+  .skill-cat {
+    font-family: var(--mono); font-size: 0.63rem;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.45rem;
+  }
+  .skill-cell h3 {
+    font-family: var(--serif); font-size: 1.15rem;
+    font-weight: 600; color: var(--ink); margin-bottom: 1rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.38rem; }
+  .skill-tag {
+    font-family: var(--mono); font-size: 0.65rem;
+    padding: 0.2rem 0.52rem;
+    border: 1px solid var(--parchment-2);
+    border-radius: 2px; color: var(--ink-mid);
+    background: var(--parchment);
+    transition: all 0.2s;
+  }
+  .skill-tag:hover { border-color: var(--sage-mid); color: var(--sage-deep); }
+
+  /* ──────────────────────────────────────
+     PROJECTS
+  ────────────────────────────────────── */
+  #projects { border-bottom: 1px solid var(--rule); }
+
+  .project-list { display: flex; flex-direction: column; }
+
+  .project-item {
+    display: grid;
+    grid-template-columns: 56px 1fr 100px;
+    gap: 2rem; align-items: start;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--rule);
+    transition: all 0.22s;
+    cursor: default;
+  }
+  .project-item:last-child { border-bottom: 1px solid var(--rule); }
+  .project-item:hover {
+    background: var(--parchment);
+    margin: 0 -2rem;
+    padding-left: 2rem; padding-right: 2rem;
+  }
+
+  .proj-num {
+    font-family: var(--mono); font-size: 0.7rem;
+    color: var(--ink-dim); padding-top: 0.3rem;
+  }
+
+  .proj-cat {
+    font-family: var(--mono); font-size: 0.63rem;
+    letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.35rem;
+  }
+  .project-item h3 {
+    font-family: var(--serif); font-size: 1.2rem;
+    font-weight: 600; color: var(--ink);
+    margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .project-item p {
+    font-size: 0.9rem; color: var(--ink-mid);
+    line-height: 1.7; max-width: 600px;
+  }
+  .proj-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 1rem; }
+  .proj-tag {
+    font-family: var(--mono); font-size: 0.62rem;
+    padding: 0.17rem 0.48rem;
+    border: 1px solid var(--sage-light);
+    border-radius: 2px; color: var(--sage-deep);
+    background: var(--sage-light);
+  }
+
+  .proj-link-col { display: flex; align-items: flex-start; padding-top: 0.4rem; }
+  .proj-link {
+    font-family: var(--mono); font-size: 0.65rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--sage); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    transition: gap 0.2s, color 0.2s; white-space: nowrap;
+  }
+  .proj-link::after { content: '→'; }
+  .proj-link:hover { gap: 0.65rem; color: var(--ink); }
+
+  /* ──────────────────────────────────────
+     PUBLICATIONS
+  ────────────────────────────────────── */
+  #publications { background: var(--parchment); border-bottom: 1px solid var(--rule); }
+
+  .pub-list { display: flex; flex-direction: column; }
+
+  .pub-item {
+    display: grid; grid-template-columns: 60px 1fr;
+    gap: 2rem; padding: 2rem 0;
+    border-top: 1px solid var(--rule);
+    transition: all 0.22s;
+  }
+  .pub-item:last-child { border-bottom: 1px solid var(--rule); }
+  .pub-item:hover { background: var(--off-white); margin: 0 -2rem; padding-left: 2rem; padding-right: 2rem; }
+
+  .pub-year {
+    font-family: var(--mono); font-size: 0.68rem;
+    color: var(--ink-dim); padding-top: 0.3rem;
+  }
+  .pub-title {
+    font-family: var(--serif); font-size: 1.05rem;
+    font-weight: 600; color: var(--ink);
+    line-height: 1.4; margin-bottom: 0.3rem;
+  }
+  .pub-journal {
+    font-size: 0.85rem; color: var(--sage-deep);
+    font-style: italic; margin-bottom: 0.35rem;
+  }
+  .pub-authors {
+    font-family: var(--mono); font-size: 0.72rem;
+    color: var(--ink-dim); line-height: 1.6;
+  }
+  .pub-authors strong { color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--sage-mid); }
+
+  .pub-empty {
+    padding: 3.5rem 2rem; text-align: center;
+    border: 1px dashed var(--parchment-3);
+    color: var(--ink-dim); font-style: italic; font-size: 0.88rem;
+    line-height: 1.8;
+  }
+  .pub-empty code {
+    font-family: var(--mono); font-size: 0.72rem;
+    background: var(--off-white); padding: 0.1rem 0.4rem;
+    border: 1px solid var(--rule); border-radius: 2px; color: var(--sage-deep);
+  }
+
+  /* ──────────────────────────────────────
+     CONTACT
+  ────────────────────────────────────── */
+  #contact { border-bottom: 1px solid var(--rule); }
+
+  .contact-grid {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 5rem; align-items: start;
   }
 
-  .about-text p { color: var(--text-dim); margin-bottom: 1.2rem; font-size: 1.05rem; }
-  .about-text p strong { color: var(--white); font-style: italic; font-weight: 400; }
+  .contact-left h2 { margin-bottom: 1rem; }
+  .contact-left p { font-size: 0.97rem; color: var(--ink-mid); line-height: 1.8; }
 
-  .about-facts { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+  .contact-links { display: flex; flex-direction: column; }
 
-  .fact {
-    display: flex; align-items: flex-start; gap: 1rem;
-    padding: 1rem 1.2rem;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 8px;
-    transition: border-color 0.3s;
+  .contact-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 0; border-top: 1px solid var(--rule);
+    text-decoration: none; transition: all 0.2s;
   }
-  .fact:hover { border-color: var(--teal); }
-  .fact-icon { font-size: 1.2rem; margin-top: 0.1rem; }
-  .fact-label { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; }
-  .fact-value { color: var(--text); font-size: 0.95rem; }
+  .contact-row:last-child { border-bottom: 1px solid var(--rule); }
+  .contact-row:hover { background: var(--parchment); margin: 0 -1rem; padding: 1.2rem 1rem; }
 
-  /* ─── SKILLS ─── */
-  .skills-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1.2rem;
+  .contact-row-left { display: flex; align-items: center; gap: 1rem; }
+  .contact-icon { color: var(--sage); flex-shrink: 0; }
+  .contact-platform {
+    font-family: var(--serif); font-size: 1rem;
+    font-weight: 600; color: var(--ink);
   }
-
-  .skill-card {
-    padding: 1.5rem;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    transition: all 0.3s;
+  .contact-handle {
+    font-family: var(--mono); font-size: 0.7rem;
+    color: var(--ink-dim); margin-top: 0.1rem;
   }
-  .skill-card:hover { border-color: var(--teal); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
-
-  .skill-cat {
-    font-family: 'DM Mono', monospace; font-size: 0.72rem;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--teal); margin-bottom: 0.8rem;
-    display: flex; align-items: center; gap: 0.5rem;
+  .contact-arr {
+    font-family: var(--mono); font-size: 0.8rem;
+    color: var(--sage); transition: transform 0.2s;
   }
-  .skill-cat::before { content: ''; display: block; width: 16px; height: 1px; background: var(--teal); }
+  .contact-row:hover .contact-arr { transform: translateX(5px); }
 
-  .skill-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; color: var(--white); margin-bottom: 0.8rem; }
-
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .skill-tag {
-    font-family: 'DM Mono', monospace; font-size: 0.72rem;
-    padding: 0.25rem 0.6rem;
-    background: rgba(0,196,161,0.07);
-    border: 1px solid rgba(0,196,161,0.15);
-    border-radius: 4px; color: var(--text-dim);
-  }
-
-  /* ─── PROJECTS ─── */
-  #projects { background: rgba(13,20,40,0.4); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
-
-  .projects-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .project-card {
-    padding: 2rem;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    position: relative; overflow: hidden;
-    transition: all 0.35s;
-    display: flex; flex-direction: column;
-  }
-  .project-card::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, var(--teal), var(--blue));
-    transform: scaleX(0); transform-origin: left;
-    transition: transform 0.4s;
-  }
-  .project-card:hover { border-color: rgba(0,196,161,0.3); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-  .project-card:hover::before { transform: scaleX(1); }
-
-  .project-num {
-    font-family: 'DM Mono', monospace; font-size: 0.72rem;
-    color: var(--teal); opacity: 0.6; margin-bottom: 1rem;
-  }
-
-  .project-card h3 {
-    font-family: 'Syne', sans-serif; font-size: 1.05rem;
-    color: var(--white); margin-bottom: 0.6rem; line-height: 1.3;
-  }
-
-  .project-card p { color: var(--text-dim); font-size: 0.9rem; flex: 1; margin-bottom: 1.5rem; }
-
-  .project-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.5rem; }
-  .stack-tag {
-    font-family: 'DM Mono', monospace; font-size: 0.68rem;
-    padding: 0.2rem 0.55rem;
-    background: rgba(26,92,255,0.1);
-    border: 1px solid rgba(26,92,255,0.2);
-    border-radius: 3px; color: #7ba7ff;
-  }
-
-  .project-link {
-    font-family: 'DM Mono', monospace; font-size: 0.76rem;
-    color: var(--teal); text-decoration: none;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    transition: gap 0.25s;
-    margin-top: auto;
-  }
-  .project-link:hover { gap: 0.7rem; }
-  .project-link::after { content: '→'; }
-
-  /* ─── PUBLICATIONS ─── */
-  .pub-list { display: flex; flex-direction: column; gap: 1rem; }
-
-  .pub-card {
-    padding: 1.5rem 2rem;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-left: 3px solid var(--teal);
-    border-radius: 0 10px 10px 0;
-    transition: all 0.3s;
-  }
-  .pub-card:hover { background: rgba(0,196,161,0.04); border-color: rgba(0,196,161,0.4); border-left-color: var(--teal); }
-
-  .pub-year {
-    font-family: 'DM Mono', monospace; font-size: 0.73rem;
-    color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase;
-    margin-bottom: 0.4rem;
-  }
-  .pub-title { font-family: 'Syne', sans-serif; font-size: 1rem; color: var(--white); margin-bottom: 0.4rem; }
-  .pub-journal { font-size: 0.88rem; color: var(--text-dim); font-style: italic; }
-  .pub-authors { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--text-dim); margin-top: 0.5rem; }
-  .pub-authors strong { color: var(--teal); font-style: normal; }
-
-  .pub-placeholder {
-    padding: 2.5rem 2rem; text-align: center;
-    border: 1px dashed var(--card-border); border-radius: 10px;
-    color: var(--text-dim); font-style: italic; font-size: 0.95rem;
-  }
-
-  /* ─── CONTACT ─── */
-  #contact { border-top: 1px solid var(--card-border); }
-
-  .contact-inner {
-    max-width: 700px; text-align: center; margin: 0 auto;
-  }
-
-  .contact-inner p { color: var(--text-dim); font-size: 1.05rem; margin-bottom: 3rem; }
-
-  .contact-links {
-    display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
-  }
-
-  .contact-link {
-    font-family: 'DM Mono', monospace; font-size: 0.8rem;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 0.9rem 1.8rem;
-    border: 1px solid var(--card-border);
-    border-radius: 6px;
-    text-decoration: none; color: var(--text);
-    display: flex; align-items: center; gap: 0.6rem;
-    transition: all 0.3s;
-  }
-  .contact-link:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-dim); }
-
-  /* ─── FOOTER ─── */
+  /* ──────────────────────────────────────
+     FOOTER
+  ────────────────────────────────────── */
   footer {
-    text-align: center;
-    padding: 2rem;
-    font-family: 'DM Mono', monospace; font-size: 0.75rem;
-    color: var(--text-dim);
-    border-top: 1px solid var(--card-border);
-    position: relative; z-index: 1;
+    background: var(--ink);
+    padding: 2.2rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
   }
+  .footer-l { font-family: var(--serif); font-size: 0.95rem; color: rgba(247,244,239,0.45); }
+  .footer-r { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,244,239,0.22); }
 
-  /* ─── DIVIDER ─── */
-  .section-divider {
-    height: 1px; background: linear-gradient(90deg, transparent, var(--card-border), transparent);
-    margin: 0;
-  }
-
-  /* ─── ANIMATIONS ─── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
+  /* ──────────────────────────────────────
+     ANIMATIONS
+  ────────────────────────────────────── */
+  @keyframes up {
+    from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  .fade-in {
-    opacity: 0; transform: translateY(24px);
+  .reveal {
+    opacity: 0; transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
 
-  /* ─── SCROLLBAR ─── */
-  ::-webkit-scrollbar { width: 5px; }
-  ::-webkit-scrollbar-track { background: var(--navy); }
-  ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 10px; }
+  .stagger > * {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+  .stagger.in > * { opacity: 1; transform: translateY(0); }
+  .stagger.in > *:nth-child(1) { transition-delay: 0s; }
+  .stagger.in > *:nth-child(2) { transition-delay: 0.07s; }
+  .stagger.in > *:nth-child(3) { transition-delay: 0.13s; }
+  .stagger.in > *:nth-child(4) { transition-delay: 0.19s; }
 
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
+  /* ──────────────────────────────────────
+     SCROLLBAR
+  ────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--parchment); }
+  ::-webkit-scrollbar-thumb { background: var(--sage-mid); border-radius: 4px; }
+
+  /* ──────────────────────────────────────
+     RESPONSIVE
+  ────────────────────────────────────── */
+  @media (max-width: 860px) {
+    nav { padding: 0 1.5rem; }
     .nav-links { display: none; }
-    #hero { padding: 6rem 1.5rem 3rem; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 5rem 1.5rem 3.5rem; }
+    .hero-chips { padding: 1.5rem; }
     .section-inner { padding: 4rem 1.5rem; }
-    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    h1 { font-size: 2.8rem; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .skills-table { grid-template-columns: 1fr; }
+    .skill-cell { border-right: 1px solid var(--rule) !important; }
+    .project-item { grid-template-columns: 44px 1fr; }
+    .proj-link-col { display: none; }
+    .pub-item { grid-template-columns: 44px 1fr; }
+    footer { flex-direction: column; gap: 0.4rem; text-align: center; padding: 2rem 1.5rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- ─── NAV ─── -->
+<!-- ─────────── NAV ─────────── -->
 <nav>
-  <div class="nav-logo">C<span>.</span>Saint-Hilaire</div>
+  <div class="nav-logo">Cadisha Saint-Hilaire</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -428,97 +518,112 @@
   </ul>
 </nav>
 
-<!-- ─── HERO ─── -->
+<!-- ─────────── HERO ─────────── -->
 <section id="hero">
-  <div class="hero-content">
-    <div class="hero-tag">Bioinformatics &amp; Data Engineering</div>
-    <h1>Cadisha<br><em>Saint-Hilaire</em></h1>
-    <p class="hero-sub">
-      Designing production-grade data pipelines for spatial transcriptomics,
-      biomedical imaging and health data — with a focus on reproducibility and real-world impact.
+  <div class="hero-left">
+    <div class="hero-eyebrow">Bioinformatics &amp; Data Engineering</div>
+    <h1>Pipelines for<br><em>life sciences</em>,<br>built to last.</h1>
+    <p class="hero-desc">
+      I design production-ready workflows for spatial transcriptomics,
+      biomedical imaging and health data — reproducible, traceable,
+      and ready for real industry constraints.
     </p>
-    <div class="hero-chips">
-      <span class="chip">Spatial Omics</span>
-      <span class="chip">Visium · Xenium</span>
-      <span class="chip">Data Engineering</span>
-      <span class="chip">Python · Nextflow</span>
-      <span class="chip">Biomedical Imaging</span>
-      <span class="chip">Paris, FR</span>
-    </div>
     <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#projects" class="btn btn-primary">Featured Projects</a>
       <a href="#contact" class="btn btn-ghost">Get in Touch</a>
     </div>
   </div>
+
+  <div class="hero-right">
+    <div class="hero-stat">
+      <div class="hero-stat-label">Specialisation</div>
+      <div class="hero-stat-value"><em>Spatial</em><br>Transcriptomics</div>
+      <div class="hero-stat-sub">Visium · Xenium · Visium HD</div>
+    </div>
+    <div>
+      <div class="hero-stat" style="border-bottom:1px solid var(--rule)">
+        <div class="hero-stat-label">Experience</div>
+        <div class="hero-stat-value">2+ years</div>
+        <div class="hero-stat-sub">Industry · Bioinformatics</div>
+      </div>
+      <div class="hero-chips">
+        <span class="chip">Spatial Omics</span>
+        <span class="chip">Data Engineering</span>
+        <span class="chip">Python · Nextflow</span>
+        <span class="chip">Biomedical Imaging</span>
+        <span class="chip">Paris, France</span>
+        <span class="chip">EU Remote</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ─── ABOUT ─── -->
+<!-- ─────────── ABOUT ─────────── -->
 <section id="about">
   <div class="section-inner">
-    <div class="section-label">About</div>
-    <h2>Where biology meets<br>production engineering.</h2>
-    <div class="about-grid fade-in">
+    <div class="reveal">
+      <div class="section-label">About</div>
+      <h2>Biology meets<br>production engineering.</h2>
+    </div>
+    <div class="about-grid reveal">
       <div class="about-text">
         <p>
-          I work at the intersection of <strong>biology, data engineering and software</strong>,
-          turning complex biological data into reliable, reusable, production-grade pipelines.
+          I work at the intersection of <em>biology, data engineering and software</em> —
+          turning complex biological data into reliable, reusable workflows that
+          R&amp;D teams can depend on day to day.
         </p>
         <p>
-          With a Master's degree in Bioinformatics (Platform Engineering track) and 2+ years of
-          industry experience, I specialise in industrialising spatial transcriptomics analyses and
-          integrating imaging with omics data.
+          With a Master's in Bioinformatics (Platform Engineering track) and 2+ years
+          of hands-on industry experience, I specialise in
+          <strong>industrialising spatial transcriptomics analyses</strong> and integrating
+          imaging with omics data in multi-modal frameworks.
         </p>
         <p>
-          My work is deliberately designed with <strong>real industry constraints</strong> in mind —
-          scalable workflows, clear code/data separation, and documentation accessible to
-          non-academic stakeholders.
+          Everything I build is designed with real industry constraints in mind: scalable
+          architectures, clear separation of data/code/config, and documentation written
+          for stakeholders beyond the academic world.
         </p>
         <p>
-          Target sectors: Biotech &amp; pharma R&amp;D, MedTech &amp; diagnostics,
-          spatial biology, digital pathology, health data platforms.
+          Target sectors: <strong>Biotech &amp; pharma R&amp;D</strong>,
+          MedTech &amp; diagnostics, spatial biology, digital pathology,
+          and health data platforms.
         </p>
       </div>
-      <div class="about-facts">
-        <div class="fact">
-          <div class="fact-icon">🎓</div>
-          <div>
-            <div class="fact-label">Education</div>
-            <div class="fact-value">Master's in Bioinformatics — Platform Engineering track</div>
-          </div>
+      <div class="about-card">
+        <div class="about-card-row">
+          <div class="about-card-label">Education</div>
+          <div class="about-card-value">MSc Bioinformatics<br>Platform Engineering</div>
         </div>
-        <div class="fact">
-          <div class="fact-icon">💼</div>
-          <div>
-            <div class="fact-label">Experience</div>
-            <div class="fact-value">Bioinformatician — 2+ years industry experience</div>
-          </div>
+        <div class="about-card-row">
+          <div class="about-card-label">Current role</div>
+          <div class="about-card-value">Bioinformatician · 2+ yrs</div>
         </div>
-        <div class="fact">
-          <div class="fact-icon">📍</div>
-          <div>
-            <div class="fact-label">Location</div>
-            <div class="fact-value">Paris, France — open to EU &amp; international remote</div>
-          </div>
+        <div class="about-card-row">
+          <div class="about-card-label">Location</div>
+          <div class="about-card-value">Paris, France</div>
         </div>
-        <div class="fact">
-          <div class="fact-icon">🎯</div>
-          <div>
-            <div class="fact-label">Goal</div>
-            <div class="fact-value">Bioinformatics / Data Engineer in health &amp; life sciences</div>
-          </div>
+        <div class="about-card-row">
+          <div class="about-card-label">Availability</div>
+          <div class="about-card-value">Paris &amp; EU Remote</div>
+        </div>
+        <div class="about-card-row">
+          <div class="about-card-label">Languages</div>
+          <div class="about-card-value">French · English</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── SKILLS ─── -->
+<!-- ─────────── SKILLS ─────────── -->
 <section id="skills">
   <div class="section-inner">
-    <div class="section-label">Technical Stack</div>
-    <h2>Tools I build with.</h2>
-    <div class="skills-grid">
-      <div class="skill-card fade-in">
+    <div class="reveal">
+      <div class="section-label">Technical Stack</div>
+      <h2>Tools &amp; methods.</h2>
+    </div>
+    <div class="skills-table stagger">
+      <div class="skill-cell">
         <div class="skill-cat">Spatial Omics</div>
         <h3>Omics Analysis</h3>
         <div class="skill-tags">
@@ -531,164 +636,226 @@
           <span class="skill-tag">Single-cell</span>
         </div>
       </div>
-      <div class="skill-card fade-in">
+      <div class="skill-cell">
         <div class="skill-cat">Imaging</div>
         <h3>Biomedical Imaging</h3>
         <div class="skill-tags">
           <span class="skill-tag">Microscopy</span>
-          <span class="skill-tag">Histology</span>
+          <span class="skill-tag">Histology images</span>
           <span class="skill-tag">scikit-image</span>
           <span class="skill-tag">napari</span>
-          <span class="skill-tag">Morphological features</span>
           <span class="skill-tag">Zarr</span>
+          <span class="skill-tag">Feature extraction</span>
         </div>
       </div>
-      <div class="skill-card fade-in">
+      <div class="skill-cell">
         <div class="skill-cat">Data Engineering</div>
-        <h3>Data Pipelines</h3>
+        <h3>Pipelines &amp; Data</h3>
         <div class="skill-tags">
           <span class="skill-tag">Python</span>
           <span class="skill-tag">SQL</span>
           <span class="skill-tag">PostgreSQL</span>
           <span class="skill-tag">FastAPI</span>
           <span class="skill-tag">Parquet</span>
-          <span class="skill-tag">ETL Design</span>
+          <span class="skill-tag">ETL design</span>
+          <span class="skill-tag">Data modeling</span>
         </div>
       </div>
-      <div class="skill-card fade-in">
-        <div class="skill-cat">MLOps / DevOps</div>
-        <h3>Pipelines &amp; CI/CD</h3>
+      <div class="skill-cell">
+        <div class="skill-cat">Orchestration &amp; DevOps</div>
+        <h3>Reproducibility</h3>
         <div class="skill-tags">
           <span class="skill-tag">Nextflow</span>
           <span class="skill-tag">Docker</span>
           <span class="skill-tag">Docker Compose</span>
           <span class="skill-tag">GitHub Actions</span>
-          <span class="skill-tag">Reproducibility</span>
+          <span class="skill-tag">CI/CD</span>
+          <span class="skill-tag">Config management</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── PROJECTS ─── -->
+<!-- ─────────── PROJECTS ─────────── -->
 <section id="projects">
   <div class="section-inner">
-    <div class="section-label">Projects</div>
-    <h2>Production-grade work.</h2>
-    <div class="projects-grid">
+    <div class="reveal">
+      <div class="section-label">Projects</div>
+      <h2>Selected work.</h2>
+    </div>
+    <div class="project-list stagger">
 
-      <div class="project-card fade-in">
-        <div class="project-num">01 / Spatial Omics</div>
-        <h3>Production-Ready Spatial Transcriptomics Pipeline</h3>
-        <p>A fully automated and reproducible pipeline for spatial transcriptomics analysis on public human datasets, designed with biotech and diagnostic workflows in mind.</p>
-        <div class="project-stack">
-          <span class="stack-tag">Nextflow</span>
-          <span class="stack-tag">Scanpy</span>
-          <span class="stack-tag">Squidpy</span>
-          <span class="stack-tag">Docker</span>
-          <span class="stack-tag">Human Visium</span>
+      <div class="project-item">
+        <div class="proj-num">01</div>
+        <div>
+          <div class="proj-cat">Spatial Omics</div>
+          <h3>Production-Ready Spatial Transcriptomics Pipeline</h3>
+          <p>A fully automated and reproducible pipeline for spatial transcriptomics analysis on public human datasets, designed with biotech and diagnostic workflows in mind.</p>
+          <div class="proj-stack">
+            <span class="proj-tag">Nextflow</span>
+            <span class="proj-tag">Scanpy</span>
+            <span class="proj-tag">Squidpy</span>
+            <span class="proj-tag">Docker</span>
+            <span class="proj-tag">Human Visium</span>
+          </div>
         </div>
-        <a href="./projects/spatial-omics-pipeline.md" class="project-link">View project</a>
+        <div class="proj-link-col">
+          <a href="./projects/spatial-omics-pipeline.md" class="proj-link">View</a>
+        </div>
       </div>
 
-      <div class="project-card fade-in">
-        <div class="project-num">02 / Multimodal</div>
-        <h3>Multimodal Imaging × Transcriptomics Analysis</h3>
-        <p>Integration of morphological features extracted from images with spatial gene expression to enable multi-modal biological insights across tissues.</p>
-        <div class="project-stack">
-          <span class="stack-tag">Python</span>
-          <span class="stack-tag">AnnData</span>
-          <span class="stack-tag">Zarr</span>
-          <span class="stack-tag">Microscopy</span>
-          <span class="stack-tag">Spatial Omics</span>
+      <div class="project-item">
+        <div class="proj-num">02</div>
+        <div>
+          <div class="proj-cat">Multimodal Analysis</div>
+          <h3>Multimodal Imaging × Transcriptomics</h3>
+          <p>Integration of morphological features extracted from images with spatial gene expression data to enable multi-modal biological insights.</p>
+          <div class="proj-stack">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">AnnData</span>
+            <span class="proj-tag">Zarr</span>
+            <span class="proj-tag">Microscopy</span>
+          </div>
         </div>
-        <a href="./projects/multimodal-imaging-omics.md" class="project-link">View project</a>
+        <div class="proj-link-col">
+          <a href="./projects/multimodal-imaging-omics.md" class="proj-link">View</a>
+        </div>
       </div>
 
-      <div class="project-card fade-in">
-        <div class="project-num">03 / Data Platform</div>
-        <h3>Health Data Engineering Platform (Mini-Prod)</h3>
-        <p>A lightweight data platform simulating an internal biotech data stack: ingestion, validation, storage and programmatic access to omics results.</p>
-        <div class="project-stack">
-          <span class="stack-tag">Python</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">FastAPI</span>
-          <span class="stack-tag">Docker</span>
+      <div class="project-item">
+        <div class="proj-num">03</div>
+        <div>
+          <div class="proj-cat">Data Engineering</div>
+          <h3>Health Data Engineering Platform (Mini-Prod)</h3>
+          <p>A lightweight data platform simulating an internal biotech data stack: ingestion, validation, storage and programmatic access to omics results.</p>
+          <div class="proj-stack">
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">PostgreSQL</span>
+            <span class="proj-tag">FastAPI</span>
+            <span class="proj-tag">Docker</span>
+          </div>
         </div>
-        <a href="./projects/health-data-platform.md" class="project-link">View project</a>
+        <div class="proj-link-col">
+          <a href="./projects/health-data-platform.md" class="proj-link">View</a>
+        </div>
       </div>
 
-      <div class="project-card fade-in">
-        <div class="project-num">04 / MLOps</div>
-        <h3>Automated Bioinformatics Platform</h3>
-        <p>A mini production-like platform to launch, monitor and expose bioinformatics pipelines and results, with full CI/CD and reproducibility guarantees.</p>
-        <div class="project-stack">
-          <span class="stack-tag">Nextflow</span>
-          <span class="stack-tag">CI/CD</span>
-          <span class="stack-tag">Monitoring</span>
-          <span class="stack-tag">Reproducibility</span>
+      <div class="project-item">
+        <div class="proj-num">04</div>
+        <div>
+          <div class="proj-cat">MLOps</div>
+          <h3>Automated Bioinformatics Platform</h3>
+          <p>A mini production-like platform to launch, monitor and expose bioinformatics pipelines and results, with full CI/CD and reproducibility guarantees.</p>
+          <div class="proj-stack">
+            <span class="proj-tag">Nextflow</span>
+            <span class="proj-tag">CI/CD</span>
+            <span class="proj-tag">Monitoring</span>
+            <span class="proj-tag">Reproducibility</span>
+          </div>
         </div>
-        <a href="./projects/bioinformatics-platform.md" class="project-link">View project</a>
+        <div class="proj-link-col">
+          <a href="./projects/bioinformatics-platform.md" class="proj-link">View</a>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ─── PUBLICATIONS ─── -->
+<!-- ─────────── PUBLICATIONS ─────────── -->
 <section id="publications">
   <div class="section-inner">
-    <div class="section-label">Publications</div>
-    <h2>Scientific contributions.</h2>
-    <div class="pub-list fade-in">
-      <!-- 
-        ✏️ HOW TO ADD A PUBLICATION:
-        Copy the block below and fill in your details.
-      
-      <div class="pub-card">
-        <div class="pub-year">2024 · Journal of Computational Biology</div>
-        <div class="pub-title">Title of the paper here</div>
-        <div class="pub-journal">Journal Name, Volume(Issue), Pages</div>
-        <div class="pub-authors">Author A, Author B, <strong>Saint-Hilaire C.</strong>, Author D</div>
-      </div>
+    <div class="reveal">
+      <div class="section-label">Publications</div>
+      <h2>Scientific contributions.</h2>
+    </div>
+    <div class="pub-list stagger">
+
+      <!--
+        ✏️ AJOUTER UNE PUBLICATION — copie ce bloc :
+
+        <div class="pub-item">
+          <div class="pub-year">2024</div>
+          <div>
+            <div class="pub-title">Titre de l'article</div>
+            <div class="pub-journal">Nom du Journal · Vol(n°) · pp. XX–XX</div>
+            <div class="pub-authors">Auteur A, Auteur B, <strong>Saint-Hilaire C.</strong>, Auteur D et al.</div>
+          </div>
+        </div>
       -->
-      <div class="pub-placeholder">
-        ✏️ &nbsp;Your publications will appear here — add them directly in the HTML.
+
+      <div class="pub-empty">
+        Tes publications apparaîtront ici.<br>
+        Utilise le template HTML en commentaire : <code>&lt;div class="pub-item"&gt;</code>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ─── CONTACT ─── -->
+<!-- ─────────── CONTACT ─────────── -->
 <section id="contact">
   <div class="section-inner">
-    <div class="contact-inner fade-in">
-      <div class="section-label" style="justify-content:center">Contact</div>
-      <h2>Let's build something<br><em>meaningful</em>.</h2>
-      <p>
-        Open to Paris-based roles and high-quality remote opportunities in biotech,
-        pharma R&amp;D, digital pathology, and health data platforms.
-      </p>
-      <div class="contact-links">
-        <a href="https://www.linkedin.com/in/cadisha-saint-hilaire-456326203/" class="contact-link" target="_blank">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/CSaint-Hilaire" class="contact-link" target="_blank">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-          GitHub
-        </a>
-        <a href="mailto:sainthilaire.cadisha@exemple.com" class="contact-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email
-        </a>
+    <div class="contact-grid reveal">
+      <div class="contact-left">
+        <div class="section-label">Contact</div>
+        <h2>Open to the<br>right opportunity.</h2>
+        <p>
+          Je recherche des postes en biotech, pharma R&amp;D, digital pathology
+          ou data engineering pour la santé — Paris ou remote EU de qualité.
+        </p>
+      </div>
+      <div>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/cadisha-saint-hilaire-456326203/" class="contact-row" target="_blank">
+            <div class="contact-row-left">
+              <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+              <div>
+                <div class="contact-platform">LinkedIn</div>
+                <div class="contact-handle">Cadisha Saint-Hilaire</div>
+              </div>
+            </div>
+            <div class="contact-arr">→</div>
+          </a>
+          <a href="https://github.com/CSaint-Hilaire" class="contact-row" target="_blank">
+            <div class="contact-row-left">
+              <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+              </svg>
+              <div>
+                <div class="contact-platform">GitHub</div>
+                <div class="contact-handle">CSaint-Hilaire</div>
+              </div>
+            </div>
+            <div class="contact-arr">→</div>
+          </a>
+          <a href="mailto:sainthilaire.cadisha@exemple.com" class="contact-row">
+            <div class="contact-row-left">
+              <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <div>
+                <div class="contact-platform">Email</div>
+                <div class="contact-handle">sainthilaire.cadisha@exemple.com</div>
+              </div>
+            </div>
+            <div class="contact-arr">→</div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ─────────── FOOTER ─────────── -->
 <footer>
-  <p>© 2025 Cadisha Saint-Hilaire &nbsp;·&nbsp; Bioinformatics &amp; Data Engineer &nbsp;·&nbsp; Paris, FR</p>
+  <div class="footer-l">Cadisha Saint-Hilaire</div>
+  <div class="footer-r">© 2025 · Bioinformatics &amp; Data Engineer · Paris</div>
 </footer>
 
 <script>
@@ -696,32 +863,26 @@
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        // Stagger children if it's a grid
-        const children = e.target.querySelectorAll('.skill-card, .project-card, .pub-card, .fact');
-        children.forEach((c, i) => {
-          c.style.transitionDelay = (i * 0.08) + 's';
-          c.classList.add('fade-in', 'visible');
-        });
+        e.target.classList.add('in');
+        observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // Nav active state
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  // Nav active highlight
+  const sects = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  const ioNav = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(a => a.classList.remove('active'));
+        const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
     });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--teal)' : '';
-    });
-  });
+  }, { rootMargin: '-38% 0px -58% 0px' });
+  sects.forEach(s => ioNav.observe(s));
 </script>
 </body>
 </html>
