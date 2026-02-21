@@ -1,43 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cadisha Saint-Hilaire | Bioinformatics & Data Engineer</title>
+<title>Cadisha Saint-Hilaire | Ingénieure Bioinformatique & Data</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Palette crème */
-    --off-white:  #f7f4ef;
-    --parchment:  #efe9df;
-    --parchment-2:#e6dfd3;
-    --parchment-3:#d8cfc2;
-
-    /* Encre */
-    --ink:        #1e1e1e;
-    --ink-soft:   #3a3a3a;
-    --ink-mid:    #5c5c5c;
-    --ink-dim:    #8c8c8c;
-
-    /* Vert sauge / olive */
-    --sage:       #5a7a5e;
-    --sage-deep:  #3d5e41;
-    --sage-light: #e8f0e8;
-    --sage-mid:   #c4d4c5;
-    --olive:      #7a8c4a;
-    --olive-light:#f0f2e4;
-
-    /* Règles */
-    --rule:       rgba(30,30,30,0.1);
-    --rule-soft:  rgba(30,30,30,0.06);
-
-    --serif:  'Cormorant Garamond', 'Georgia', serif;
-    --sans:   'Outfit', system-ui, sans-serif;
-    --mono:   'JetBrains Mono', monospace;
+    --off-white:   #f7f4ef;
+    --parchment:   #efe9df;
+    --parchment-2: #e6dfd3;
+    --parchment-3: #d8cfc2;
+    --ink:         #1e1e1e;
+    --ink-soft:    #3a3a3a;
+    --ink-mid:     #5c5c5c;
+    --ink-dim:     #8c8c8c;
+    --sage:        #5a7a5e;
+    --sage-deep:   #3d5e41;
+    --sage-light:  #e8f0e8;
+    --sage-mid:    #c4d4c5;
+    --rule:        rgba(30,30,30,0.1);
+    --rule-soft:   rgba(30,30,30,0.06);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans:  'Outfit', system-ui, sans-serif;
+    --mono:  'JetBrains Mono', monospace;
   }
 
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior: smooth; }
 
   body {
@@ -50,22 +40,22 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── GRAIN SUBTIL ── */
   body::before {
-    content: '';
-    position: fixed; inset: 0; pointer-events: none; z-index: 9999;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    content:''; position:fixed; inset:0; pointer-events:none; z-index:9999;
+    opacity:.03;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  /* ──────────────────────────────────────
-     NAV
-  ────────────────────────────────────── */
+  /* ── LANG HIDDEN ── */
+  [data-lang] { display: none; }
+  .lang-fr [data-lang="fr"],
+  .lang-en [data-lang="en"] { display: revert; }
+
+  /* ── NAV ── */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top:0; left:0; right:0; z-index:100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 0 4rem;
-    height: 64px;
+    padding: 0 4rem; height: 64px;
     background: rgba(247,244,239,0.94);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--rule);
@@ -73,614 +63,544 @@
 
   .nav-logo {
     font-family: var(--serif);
-    font-size: 1.15rem; font-weight: 600;
-    color: var(--ink); letter-spacing: 0.01em;
+    font-size: 1.15rem; font-weight: 600; color: var(--ink);
   }
 
-  .nav-links { display: flex; list-style: none; }
+  .nav-right { display:flex; align-items:center; gap:0.5rem; }
+
+  .nav-links { display:flex; list-style:none; }
   .nav-links a {
-    font-family: var(--mono); font-size: 0.68rem;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--ink-dim); text-decoration: none;
-    padding: 0 1rem; height: 64px;
-    display: flex; align-items: center;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
+    font-family: var(--mono); font-size:0.68rem;
+    letter-spacing:0.12em; text-transform:uppercase;
+    color: var(--ink-dim); text-decoration:none;
+    padding:0 1rem; height:64px;
+    display:flex; align-items:center;
+    border-bottom:2px solid transparent;
+    transition: color .2s, border-color .2s;
   }
   .nav-links a:hover, .nav-links a.active {
     color: var(--sage-deep); border-bottom-color: var(--sage);
   }
 
-  /* ──────────────────────────────────────
-     HERO
-  ────────────────────────────────────── */
+  /* ── LANG SWITCHER ── */
+  .lang-switcher {
+    display: flex; align-items: center;
+    border: 1px solid var(--parchment-3);
+    border-radius: 3px; overflow: hidden;
+    margin-left: 1.5rem;
+  }
+  .lang-btn {
+    font-family: var(--mono); font-size:0.65rem;
+    letter-spacing:0.1em; text-transform:uppercase;
+    padding: 0.35rem 0.7rem; cursor:pointer;
+    border:none; background:transparent;
+    color: var(--ink-dim); transition: all .2s;
+  }
+  .lang-btn.active {
+    background: var(--sage-deep); color: var(--off-white);
+  }
+  .lang-btn:not(.active):hover {
+    background: var(--sage-light); color: var(--sage-deep);
+  }
+  .lang-divider {
+    width:1px; height:24px; background: var(--parchment-3);
+  }
+
+  /* ── HERO ── */
   #hero {
-    min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 1fr;
-    border-bottom: 1px solid var(--rule);
-    padding-top: 64px;
+    min-height:100vh;
+    display:grid; grid-template-columns:1fr 1fr;
+    border-bottom:1px solid var(--rule);
+    padding-top:64px;
   }
 
   .hero-left {
-    padding: 7rem 4rem 5rem;
-    border-right: 1px solid var(--rule);
-    display: flex; flex-direction: column; justify-content: center;
+    padding:7rem 4rem 5rem;
+    border-right:1px solid var(--rule);
+    display:flex; flex-direction:column; justify-content:center;
   }
 
   .hero-eyebrow {
-    font-family: var(--mono); font-size: 0.68rem;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: 1.8rem;
-    display: flex; align-items: center; gap: 0.9rem;
-    animation: up 0.6s ease both;
+    font-family: var(--mono); font-size:0.68rem;
+    letter-spacing:0.18em; text-transform:uppercase;
+    color: var(--sage); margin-bottom:1.8rem;
+    display:flex; align-items:center; gap:0.9rem;
+    animation: up .6s ease both;
   }
-  .hero-eyebrow::before {
-    content: ''; display: block; width: 28px; height: 1px; background: var(--sage);
-  }
+  .hero-eyebrow::before { content:''; display:block; width:28px; height:1px; background:var(--sage); }
 
   h1 {
     font-family: var(--serif);
-    font-size: clamp(3.5rem, 5vw, 5.8rem);
-    font-weight: 600; line-height: 1.05;
-    color: var(--ink); letter-spacing: -0.01em;
-    margin-bottom: 1.8rem;
-    animation: up 0.6s 0.08s ease both;
+    font-size: clamp(3.2rem,5vw,5.6rem);
+    font-weight:600; line-height:1.06;
+    color: var(--ink); letter-spacing:-.01em;
+    margin-bottom:1.8rem;
+    animation: up .6s .08s ease both;
   }
-  h1 em { font-style: italic; color: var(--sage-deep); }
+  h1 em { font-style:italic; color:var(--sage-deep); }
 
   .hero-desc {
-    font-size: 1rem; color: var(--ink-mid);
-    line-height: 1.8; max-width: 460px;
-    margin-bottom: 2.8rem;
-    animation: up 0.6s 0.16s ease both;
+    font-size:1rem; color:var(--ink-mid);
+    line-height:1.8; max-width:460px;
+    margin-bottom:2.8rem;
+    animation: up .6s .16s ease both;
   }
 
-  .hero-cta {
-    display: flex; gap: 0.8rem;
-    animation: up 0.6s 0.24s ease both;
-  }
+  .hero-cta { display:flex; gap:.8rem; animation: up .6s .24s ease both; }
 
   .btn {
-    font-family: var(--mono); font-size: 0.68rem;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 0.75rem 1.6rem; border-radius: 2px;
-    text-decoration: none; transition: all 0.25s; cursor: pointer;
+    font-family: var(--mono); font-size:0.68rem;
+    letter-spacing:0.12em; text-transform:uppercase;
+    padding:.75rem 1.6rem; border-radius:2px;
+    text-decoration:none; transition:all .25s; cursor:pointer;
   }
-  .btn-primary { background: var(--sage-deep); color: var(--off-white); border: 1.5px solid var(--sage-deep); }
-  .btn-primary:hover { background: var(--ink); border-color: var(--ink); }
-  .btn-ghost { background: transparent; color: var(--ink-mid); border: 1.5px solid var(--parchment-2); }
-  .btn-ghost:hover { border-color: var(--sage); color: var(--sage-deep); }
+  .btn-primary { background:var(--sage-deep); color:var(--off-white); border:1.5px solid var(--sage-deep); }
+  .btn-primary:hover { background:var(--ink); border-color:var(--ink); }
+  .btn-ghost { background:transparent; color:var(--ink-mid); border:1.5px solid var(--parchment-2); }
+  .btn-ghost:hover { border-color:var(--sage); color:var(--sage-deep); }
 
-  /* Hero right — grille de stats */
-  .hero-right {
-    display: grid; grid-template-rows: 1fr 1fr;
-    background: var(--parchment);
-  }
+  .hero-right { display:grid; grid-template-rows:1fr auto; background:var(--parchment); }
 
   .hero-stat {
-    padding: 3.5rem 4rem;
-    border-bottom: 1px solid var(--rule);
-    display: flex; flex-direction: column; justify-content: flex-end;
+    padding:3.5rem 4rem; border-bottom:1px solid var(--rule);
+    display:flex; flex-direction:column; justify-content:flex-end;
   }
-  .hero-stat:last-child { border-bottom: none; }
-
   .hero-stat-label {
-    font-family: var(--mono); font-size: 0.65rem;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--ink-dim); margin-bottom: 0.5rem;
+    font-family:var(--mono); font-size:0.65rem;
+    letter-spacing:.15em; text-transform:uppercase;
+    color:var(--ink-dim); margin-bottom:.5rem;
   }
   .hero-stat-value {
-    font-family: var(--serif); font-size: 2.2rem;
-    font-weight: 600; color: var(--ink); line-height: 1.1;
+    font-family:var(--serif); font-size:2.2rem;
+    font-weight:600; color:var(--ink); line-height:1.1;
   }
-  .hero-stat-value em { font-style: italic; color: var(--sage-deep); }
-  .hero-stat-sub {
-    font-size: 0.85rem; color: var(--ink-dim); margin-top: 0.4rem;
-  }
+  .hero-stat-value em { font-style:italic; color:var(--sage-deep); }
+  .hero-stat-sub { font-size:.85rem; color:var(--ink-dim); margin-top:.4rem; }
 
-  /* chips */
   .hero-chips {
-    display: flex; flex-wrap: wrap; gap: 0.45rem;
-    padding: 2.5rem 4rem;
-    border-top: 1px solid var(--rule);
-    animation: up 0.6s 0.32s ease both;
+    display:flex; flex-wrap:wrap; gap:.45rem;
+    padding:2.5rem 4rem; border-top:1px solid var(--rule);
+    animation: up .6s .32s ease both;
   }
   .chip {
-    font-family: var(--mono); font-size: 0.67rem;
-    padding: 0.28rem 0.7rem;
-    border: 1px solid var(--parchment-3);
-    border-radius: 2px; color: var(--ink-mid);
-    background: var(--off-white);
-    transition: all 0.2s;
+    font-family:var(--mono); font-size:0.67rem;
+    padding:.28rem .7rem; border:1px solid var(--parchment-3);
+    border-radius:2px; color:var(--ink-mid); background:var(--off-white);
+    transition:all .2s;
   }
-  .chip:hover { border-color: var(--sage); color: var(--sage-deep); background: var(--sage-light); }
+  .chip:hover { border-color:var(--sage); color:var(--sage-deep); background:var(--sage-light); }
 
-  /* ──────────────────────────────────────
-     LAYOUT GÉNÉRAL
-  ────────────────────────────────────── */
-  .section-inner { max-width: 1080px; margin: 0 auto; padding: 6rem 4rem; }
+  /* ── LAYOUT ── */
+  .section-inner { max-width:1080px; margin:0 auto; padding:6rem 4rem; }
 
   .section-label {
-    font-family: var(--mono); font-size: 0.67rem;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: 0.6rem;
-    display: flex; align-items: center; gap: 0.7rem;
+    font-family:var(--mono); font-size:0.67rem;
+    letter-spacing:.18em; text-transform:uppercase;
+    color:var(--sage); margin-bottom:.6rem;
+    display:flex; align-items:center; gap:.7rem;
   }
-  .section-label::before { content: ''; display: block; width: 22px; height: 1px; background: var(--sage); }
+  .section-label::before { content:''; display:block; width:22px; height:1px; background:var(--sage); }
 
   h2 {
     font-family: var(--serif);
-    font-size: clamp(2rem, 3.2vw, 2.8rem);
-    font-weight: 600; color: var(--ink);
-    letter-spacing: -0.02em; line-height: 1.1;
-    margin-bottom: 3rem;
+    font-size: clamp(2rem,3.2vw,2.8rem);
+    font-weight:600; color:var(--ink);
+    letter-spacing:-.02em; line-height:1.1;
+    margin-bottom:3rem;
   }
 
-  /* ──────────────────────────────────────
-     ABOUT
-  ────────────────────────────────────── */
-  #about { border-bottom: 1px solid var(--rule); }
+  /* ── ABOUT ── */
+  #about { border-bottom:1px solid var(--rule); }
 
-  .about-grid {
-    display: grid; grid-template-columns: 1.8fr 1fr;
-    gap: 5rem; align-items: start;
-  }
+  .about-grid { display:grid; grid-template-columns:1.8fr 1fr; gap:5rem; align-items:start; }
 
-  .about-text p {
-    font-size: 1.02rem; color: var(--ink-mid);
-    margin-bottom: 1.3rem; line-height: 1.85;
-  }
-  .about-text p em { font-style: italic; color: var(--ink); font-family: var(--serif); font-size: 1.08rem; }
-  .about-text p strong { color: var(--sage-deep); font-weight: 500; }
+  .about-text p { font-size:1.02rem; color:var(--ink-mid); margin-bottom:1.3rem; line-height:1.85; }
+  .about-text p em { font-style:italic; color:var(--ink); font-family:var(--serif); font-size:1.08rem; }
+  .about-text p strong { color:var(--sage-deep); font-weight:500; }
 
-  .about-card {
-    background: var(--parchment);
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  .about-card-row {
-    padding: 1rem 1.4rem;
-    border-bottom: 1px solid var(--rule-soft);
-  }
-  .about-card-row:last-child { border-bottom: none; }
+  .about-card { background:var(--parchment); border:1px solid var(--rule); border-radius:3px; overflow:hidden; }
+  .about-card-row { padding:1rem 1.4rem; border-bottom:1px solid var(--rule-soft); }
+  .about-card-row:last-child { border-bottom:none; }
   .about-card-label {
-    font-family: var(--mono); font-size: 0.62rem;
-    letter-spacing: 0.13em; text-transform: uppercase;
-    color: var(--ink-dim); margin-bottom: 0.25rem;
+    font-family:var(--mono); font-size:0.62rem;
+    letter-spacing:.13em; text-transform:uppercase;
+    color:var(--ink-dim); margin-bottom:.25rem;
   }
-  .about-card-value {
-    font-family: var(--serif); font-size: 0.98rem;
-    color: var(--ink); font-weight: 500;
-  }
+  .about-card-value { font-family:var(--serif); font-size:.98rem; color:var(--ink); font-weight:500; }
 
-  /* ──────────────────────────────────────
-     SKILLS
-  ────────────────────────────────────── */
-  #skills { background: var(--parchment); border-bottom: 1px solid var(--rule); }
+  /* ── SKILLS ── */
+  #skills { background:var(--parchment); border-bottom:1px solid var(--rule); }
 
-  .skills-table {
-    border: 1px solid var(--rule);
-    display: grid; grid-template-columns: 1fr 1fr;
-  }
+  .skills-table { border:1px solid var(--rule); display:grid; grid-template-columns:1fr 1fr; }
   .skill-cell {
-    padding: 2rem 2.2rem;
-    border-right: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    transition: background 0.2s;
+    padding:2rem 2.2rem; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);
+    transition:background .2s;
   }
-  .skill-cell:nth-child(2n) { border-right: none; }
-  .skill-cell:nth-last-child(-n+2) { border-bottom: none; }
-  .skill-cell:hover { background: var(--off-white); }
-
+  .skill-cell:nth-child(2n) { border-right:none; }
+  .skill-cell:nth-last-child(-n+2) { border-bottom:none; }
+  .skill-cell:hover { background:var(--off-white); }
   .skill-cat {
-    font-family: var(--mono); font-size: 0.63rem;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: 0.45rem;
+    font-family:var(--mono); font-size:0.63rem;
+    letter-spacing:.14em; text-transform:uppercase;
+    color:var(--sage); margin-bottom:.45rem;
   }
-  .skill-cell h3 {
-    font-family: var(--serif); font-size: 1.15rem;
-    font-weight: 600; color: var(--ink); margin-bottom: 1rem;
-  }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.38rem; }
+  .skill-cell h3 { font-family:var(--serif); font-size:1.15rem; font-weight:600; color:var(--ink); margin-bottom:1rem; }
+  .skill-tags { display:flex; flex-wrap:wrap; gap:.38rem; }
   .skill-tag {
-    font-family: var(--mono); font-size: 0.65rem;
-    padding: 0.2rem 0.52rem;
-    border: 1px solid var(--parchment-2);
-    border-radius: 2px; color: var(--ink-mid);
-    background: var(--parchment);
-    transition: all 0.2s;
+    font-family:var(--mono); font-size:0.65rem;
+    padding:.2rem .52rem; border:1px solid var(--parchment-2);
+    border-radius:2px; color:var(--ink-mid); background:var(--parchment);
+    transition:all .2s;
   }
-  .skill-tag:hover { border-color: var(--sage-mid); color: var(--sage-deep); }
+  .skill-tag:hover { border-color:var(--sage-mid); color:var(--sage-deep); }
 
-  /* ──────────────────────────────────────
-     PROJECTS
-  ────────────────────────────────────── */
-  #projects { border-bottom: 1px solid var(--rule); }
+  /* ── PROJECTS ── */
+  #projects { border-bottom:1px solid var(--rule); }
 
-  .project-list { display: flex; flex-direction: column; }
-
+  .project-list { display:flex; flex-direction:column; }
   .project-item {
-    display: grid;
-    grid-template-columns: 56px 1fr 100px;
-    gap: 2rem; align-items: start;
-    padding: 2.5rem 0;
-    border-top: 1px solid var(--rule);
-    transition: all 0.22s;
-    cursor: default;
+    display:grid; grid-template-columns:56px 1fr 100px;
+    gap:2rem; align-items:start;
+    padding:2.5rem 0; border-top:1px solid var(--rule);
+    transition:all .22s;
   }
-  .project-item:last-child { border-bottom: 1px solid var(--rule); }
-  .project-item:hover {
-    background: var(--parchment);
-    margin: 0 -2rem;
-    padding-left: 2rem; padding-right: 2rem;
-  }
+  .project-item:last-child { border-bottom:1px solid var(--rule); }
+  .project-item:hover { background:var(--parchment); margin:0 -2rem; padding-left:2rem; padding-right:2rem; }
 
-  .proj-num {
-    font-family: var(--mono); font-size: 0.7rem;
-    color: var(--ink-dim); padding-top: 0.3rem;
-  }
-
+  .proj-num { font-family:var(--mono); font-size:.7rem; color:var(--ink-dim); padding-top:.3rem; }
   .proj-cat {
-    font-family: var(--mono); font-size: 0.63rem;
-    letter-spacing: 0.13em; text-transform: uppercase;
-    color: var(--sage); margin-bottom: 0.35rem;
+    font-family:var(--mono); font-size:.63rem;
+    letter-spacing:.13em; text-transform:uppercase;
+    color:var(--sage); margin-bottom:.35rem;
   }
-  .project-item h3 {
-    font-family: var(--serif); font-size: 1.2rem;
-    font-weight: 600; color: var(--ink);
-    margin-bottom: 0.5rem; line-height: 1.3;
-  }
-  .project-item p {
-    font-size: 0.9rem; color: var(--ink-mid);
-    line-height: 1.7; max-width: 600px;
-  }
-  .proj-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 1rem; }
+  .project-item h3 { font-family:var(--serif); font-size:1.2rem; font-weight:600; color:var(--ink); margin-bottom:.5rem; line-height:1.3; }
+  .project-item p { font-size:.9rem; color:var(--ink-mid); line-height:1.7; max-width:600px; }
+  .proj-stack { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:1rem; }
   .proj-tag {
-    font-family: var(--mono); font-size: 0.62rem;
-    padding: 0.17rem 0.48rem;
-    border: 1px solid var(--sage-light);
-    border-radius: 2px; color: var(--sage-deep);
-    background: var(--sage-light);
+    font-family:var(--mono); font-size:.62rem;
+    padding:.17rem .48rem; border:1px solid var(--sage-light);
+    border-radius:2px; color:var(--sage-deep); background:var(--sage-light);
   }
-
-  .proj-link-col { display: flex; align-items: flex-start; padding-top: 0.4rem; }
+  .proj-link-col { display:flex; align-items:flex-start; padding-top:.4rem; }
   .proj-link {
-    font-family: var(--mono); font-size: 0.65rem;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--sage); text-decoration: none;
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    transition: gap 0.2s, color 0.2s; white-space: nowrap;
+    font-family:var(--mono); font-size:.65rem;
+    letter-spacing:.1em; text-transform:uppercase;
+    color:var(--sage); text-decoration:none;
+    display:inline-flex; align-items:center; gap:.4rem;
+    transition:gap .2s, color .2s; white-space:nowrap;
   }
-  .proj-link::after { content: '→'; }
-  .proj-link:hover { gap: 0.65rem; color: var(--ink); }
+  .proj-link::after { content:'→'; }
+  .proj-link:hover { gap:.65rem; color:var(--ink); }
 
-  /* ──────────────────────────────────────
-     PUBLICATIONS
-  ────────────────────────────────────── */
-  #publications { background: var(--parchment); border-bottom: 1px solid var(--rule); }
+  /* ── PUBLICATIONS ── */
+  #publications { background:var(--parchment); border-bottom:1px solid var(--rule); }
 
-  .pub-list { display: flex; flex-direction: column; }
-
+  .pub-list { display:flex; flex-direction:column; }
   .pub-item {
-    display: grid; grid-template-columns: 60px 1fr;
-    gap: 2rem; padding: 2rem 0;
-    border-top: 1px solid var(--rule);
-    transition: all 0.22s;
+    display:grid; grid-template-columns:60px 1fr;
+    gap:2rem; padding:2rem 0; border-top:1px solid var(--rule);
+    transition:all .22s;
   }
-  .pub-item:last-child { border-bottom: 1px solid var(--rule); }
-  .pub-item:hover { background: var(--off-white); margin: 0 -2rem; padding-left: 2rem; padding-right: 2rem; }
-
-  .pub-year {
-    font-family: var(--mono); font-size: 0.68rem;
-    color: var(--ink-dim); padding-top: 0.3rem;
-  }
-  .pub-title {
-    font-family: var(--serif); font-size: 1.05rem;
-    font-weight: 600; color: var(--ink);
-    line-height: 1.4; margin-bottom: 0.3rem;
-  }
-  .pub-journal {
-    font-size: 0.85rem; color: var(--sage-deep);
-    font-style: italic; margin-bottom: 0.35rem;
-  }
-  .pub-authors {
-    font-family: var(--mono); font-size: 0.72rem;
-    color: var(--ink-dim); line-height: 1.6;
-  }
-  .pub-authors strong { color: var(--ink-soft); text-decoration: underline; text-decoration-color: var(--sage-mid); }
-
+  .pub-item:last-child { border-bottom:1px solid var(--rule); }
+  .pub-item:hover { background:var(--off-white); margin:0 -2rem; padding-left:2rem; padding-right:2rem; }
+  .pub-year { font-family:var(--mono); font-size:.68rem; color:var(--ink-dim); padding-top:.3rem; }
+  .pub-title { font-family:var(--serif); font-size:1.05rem; font-weight:600; color:var(--ink); line-height:1.4; margin-bottom:.3rem; }
+  .pub-journal { font-size:.85rem; color:var(--sage-deep); font-style:italic; margin-bottom:.35rem; }
+  .pub-authors { font-family:var(--mono); font-size:.72rem; color:var(--ink-dim); line-height:1.6; }
+  .pub-authors strong { color:var(--ink-soft); text-decoration:underline; text-decoration-color:var(--sage-mid); }
   .pub-empty {
-    padding: 3.5rem 2rem; text-align: center;
-    border: 1px dashed var(--parchment-3);
-    color: var(--ink-dim); font-style: italic; font-size: 0.88rem;
-    line-height: 1.8;
+    padding:3.5rem 2rem; text-align:center;
+    border:1px dashed var(--parchment-3);
+    color:var(--ink-dim); font-style:italic; font-size:.88rem; line-height:1.8;
   }
   .pub-empty code {
-    font-family: var(--mono); font-size: 0.72rem;
-    background: var(--off-white); padding: 0.1rem 0.4rem;
-    border: 1px solid var(--rule); border-radius: 2px; color: var(--sage-deep);
+    font-family:var(--mono); font-size:.72rem;
+    background:var(--off-white); padding:.1rem .4rem;
+    border:1px solid var(--rule); border-radius:2px; color:var(--sage-deep);
   }
 
-  /* ──────────────────────────────────────
-     CONTACT
-  ────────────────────────────────────── */
-  #contact { border-bottom: 1px solid var(--rule); }
-
-  .contact-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 5rem; align-items: start;
-  }
-
-  .contact-left h2 { margin-bottom: 1rem; }
-  .contact-left p { font-size: 0.97rem; color: var(--ink-mid); line-height: 1.8; }
-
-  .contact-links { display: flex; flex-direction: column; }
-
+  /* ── CONTACT ── */
+  #contact { border-bottom:1px solid var(--rule); }
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+  .contact-left p { font-size:.97rem; color:var(--ink-mid); line-height:1.8; margin-top:1rem; }
+  .contact-links { display:flex; flex-direction:column; }
   .contact-row {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 0; border-top: 1px solid var(--rule);
-    text-decoration: none; transition: all 0.2s;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:1.2rem 0; border-top:1px solid var(--rule);
+    text-decoration:none; transition:all .2s;
   }
-  .contact-row:last-child { border-bottom: 1px solid var(--rule); }
-  .contact-row:hover { background: var(--parchment); margin: 0 -1rem; padding: 1.2rem 1rem; }
+  .contact-row:last-child { border-bottom:1px solid var(--rule); }
+  .contact-row:hover { background:var(--parchment); margin:0 -1rem; padding:1.2rem 1rem; }
+  .contact-row-left { display:flex; align-items:center; gap:1rem; }
+  .contact-icon { color:var(--sage); flex-shrink:0; }
+  .contact-platform { font-family:var(--serif); font-size:1rem; font-weight:600; color:var(--ink); }
+  .contact-handle { font-family:var(--mono); font-size:.7rem; color:var(--ink-dim); margin-top:.1rem; }
+  .contact-arr { font-family:var(--mono); font-size:.8rem; color:var(--sage); transition:transform .2s; }
+  .contact-row:hover .contact-arr { transform:translateX(5px); }
 
-  .contact-row-left { display: flex; align-items: center; gap: 1rem; }
-  .contact-icon { color: var(--sage); flex-shrink: 0; }
-  .contact-platform {
-    font-family: var(--serif); font-size: 1rem;
-    font-weight: 600; color: var(--ink);
-  }
-  .contact-handle {
-    font-family: var(--mono); font-size: 0.7rem;
-    color: var(--ink-dim); margin-top: 0.1rem;
-  }
-  .contact-arr {
-    font-family: var(--mono); font-size: 0.8rem;
-    color: var(--sage); transition: transform 0.2s;
-  }
-  .contact-row:hover .contact-arr { transform: translateX(5px); }
+  /* ── FOOTER ── */
+  footer { background:var(--ink); padding:2.2rem 4rem; display:flex; align-items:center; justify-content:space-between; }
+  .footer-l { font-family:var(--serif); font-size:.95rem; color:rgba(247,244,239,.45); }
+  .footer-r { font-family:var(--mono); font-size:.65rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(247,244,239,.22); }
 
-  /* ──────────────────────────────────────
-     FOOTER
-  ────────────────────────────────────── */
-  footer {
-    background: var(--ink);
-    padding: 2.2rem 4rem;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .footer-l { font-family: var(--serif); font-size: 0.95rem; color: rgba(247,244,239,0.45); }
-  .footer-r { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(247,244,239,0.22); }
+  /* ── ANIMATIONS ── */
+  @keyframes up { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+  .reveal { opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity:1; transform:translateY(0); }
+  .stagger > * { opacity:0; transform:translateY(14px); transition:opacity .45s ease, transform .45s ease; }
+  .stagger.in > * { opacity:1; transform:translateY(0); }
+  .stagger.in > *:nth-child(1) { transition-delay:0s; }
+  .stagger.in > *:nth-child(2) { transition-delay:.07s; }
+  .stagger.in > *:nth-child(3) { transition-delay:.13s; }
+  .stagger.in > *:nth-child(4) { transition-delay:.19s; }
 
-  /* ──────────────────────────────────────
-     ANIMATIONS
-  ────────────────────────────────────── */
-  @keyframes up {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  ::-webkit-scrollbar { width:4px; }
+  ::-webkit-scrollbar-track { background:var(--parchment); }
+  ::-webkit-scrollbar-thumb { background:var(--sage-mid); border-radius:4px; }
 
-  .reveal {
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal.in { opacity: 1; transform: translateY(0); }
-
-  .stagger > * {
-    opacity: 0; transform: translateY(14px);
-    transition: opacity 0.45s ease, transform 0.45s ease;
-  }
-  .stagger.in > * { opacity: 1; transform: translateY(0); }
-  .stagger.in > *:nth-child(1) { transition-delay: 0s; }
-  .stagger.in > *:nth-child(2) { transition-delay: 0.07s; }
-  .stagger.in > *:nth-child(3) { transition-delay: 0.13s; }
-  .stagger.in > *:nth-child(4) { transition-delay: 0.19s; }
-
-  /* ──────────────────────────────────────
-     SCROLLBAR
-  ────────────────────────────────────── */
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--parchment); }
-  ::-webkit-scrollbar-thumb { background: var(--sage-mid); border-radius: 4px; }
-
-  /* ──────────────────────────────────────
-     RESPONSIVE
-  ────────────────────────────────────── */
-  @media (max-width: 860px) {
-    nav { padding: 0 1.5rem; }
-    .nav-links { display: none; }
-    #hero { grid-template-columns: 1fr; }
-    .hero-right { display: none; }
-    .hero-left { padding: 5rem 1.5rem 3.5rem; }
-    .hero-chips { padding: 1.5rem; }
-    .section-inner { padding: 4rem 1.5rem; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .skills-table { grid-template-columns: 1fr; }
-    .skill-cell { border-right: 1px solid var(--rule) !important; }
-    .project-item { grid-template-columns: 44px 1fr; }
-    .proj-link-col { display: none; }
-    .pub-item { grid-template-columns: 44px 1fr; }
-    footer { flex-direction: column; gap: 0.4rem; text-align: center; padding: 2rem 1.5rem; }
+  @media (max-width:860px) {
+    nav { padding:0 1.5rem; }
+    .nav-links { display:none; }
+    #hero { grid-template-columns:1fr; }
+    .hero-right { display:none; }
+    .hero-left { padding:5rem 1.5rem 3.5rem; }
+    .hero-chips { padding:1.5rem; }
+    .section-inner { padding:4rem 1.5rem; }
+    .about-grid, .contact-grid { grid-template-columns:1fr; gap:2.5rem; }
+    .skills-table { grid-template-columns:1fr; }
+    .skill-cell { border-right:1px solid var(--rule) !important; }
+    .project-item { grid-template-columns:44px 1fr; }
+    .proj-link-col { display:none; }
+    .pub-item { grid-template-columns:44px 1fr; }
+    footer { flex-direction:column; gap:.4rem; text-align:center; padding:2rem 1.5rem; }
   }
 </style>
 </head>
-<body>
 
-<!-- ─────────── NAV ─────────── -->
+<!-- VERSION FRANÇAISE par défaut -->
+<body class="lang-fr">
+
+<!-- ─── NAV ─── -->
 <nav>
   <div class="nav-logo">Cadisha Saint-Hilaire</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about" data-lang="fr">À propos</a><a href="#about" data-lang="en">About</a></li>
+      <li><a href="#skills" data-lang="fr">Compétences</a><a href="#skills" data-lang="en">Skills</a></li>
+      <li><a href="#projects" data-lang="fr">Projets</a><a href="#projects" data-lang="en">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')">FR</button>
+      <div class="lang-divider"></div>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
 </nav>
 
-<!-- ─────────── HERO ─────────── -->
+<!-- ─── HERO ─── -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">Bioinformatics &amp; Data Engineering</div>
-    <h1>Pipelines for<br><em>life sciences</em>,<br>built to last.</h1>
-    <p class="hero-desc">
-      I design production-ready workflows for spatial transcriptomics,
-      biomedical imaging and health data — reproducible, traceable,
-      and ready for real industry constraints.
-    </p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">Featured Projects</a>
-      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    <!-- FR -->
+    <div data-lang="fr">
+      <div class="hero-eyebrow">Bioinformatique &amp; Ingénierie des Données</div>
+      <h1>Des pipelines pour<br>les <em>sciences du vivant</em>,<br>pensés pour durer.</h1>
+      <p class="hero-desc">
+        Je conçois des workflows de données prêts pour la production —
+        transcriptomique spatiale, imagerie biomédicale et données de santé —
+        avec un focus sur la reproductibilité et les contraintes industrielles réelles.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">Voir les projets</a>
+        <a href="#contact" class="btn btn-ghost">Me contacter</a>
+      </div>
+    </div>
+    <!-- EN -->
+    <div data-lang="en">
+      <div class="hero-eyebrow">Bioinformatics &amp; Data Engineering</div>
+      <h1>Pipelines for<br><em>life sciences</em>,<br>built to last.</h1>
+      <p class="hero-desc">
+        I design production-ready workflows for spatial transcriptomics,
+        biomedical imaging and health data — with a focus on reproducibility,
+        traceability and real industry constraints.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">Featured Projects</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
     </div>
   </div>
 
   <div class="hero-right">
     <div class="hero-stat">
-      <div class="hero-stat-label">Specialisation</div>
+      <div class="hero-stat-label" data-lang="fr">Spécialisation</div>
+      <div class="hero-stat-label" data-lang="en">Specialisation</div>
       <div class="hero-stat-value"><em>Spatial</em><br>Transcriptomics</div>
       <div class="hero-stat-sub">Visium · Xenium · Visium HD</div>
     </div>
     <div>
       <div class="hero-stat" style="border-bottom:1px solid var(--rule)">
-        <div class="hero-stat-label">Experience</div>
-        <div class="hero-stat-value">2+ years</div>
-        <div class="hero-stat-sub">Industry · Bioinformatics</div>
+        <div class="hero-stat-label" data-lang="fr">Expérience</div>
+        <div class="hero-stat-label" data-lang="en">Experience</div>
+        <div class="hero-stat-value">2+ ans</div>
+        <div class="hero-stat-sub" data-lang="fr">Industrie · Bioinformatique</div>
+        <div class="hero-stat-sub" data-lang="en">Industry · Bioinformatics</div>
       </div>
       <div class="hero-chips">
         <span class="chip">Spatial Omics</span>
         <span class="chip">Data Engineering</span>
         <span class="chip">Python · Nextflow</span>
-        <span class="chip">Biomedical Imaging</span>
+        <span class="chip" data-lang="fr">Imagerie Biomédicale</span>
+        <span class="chip" data-lang="en">Biomedical Imaging</span>
         <span class="chip">Paris, France</span>
-        <span class="chip">EU Remote</span>
+        <span class="chip" data-lang="fr">Remote EU</span>
+        <span class="chip" data-lang="en">EU Remote</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─────────── ABOUT ─────────── -->
+<!-- ─── ABOUT ─── -->
 <section id="about">
   <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">About</div>
-      <h2>Biology meets<br>production engineering.</h2>
+
+    <div class="reveal" data-lang="fr">
+      <div class="section-label">À propos</div>
+      <h2>Là où la biologie<br>rencontre l'ingénierie.</h2>
     </div>
+    <div class="reveal" data-lang="en">
+      <div class="section-label">About</div>
+      <h2>Where biology meets<br>production engineering.</h2>
+    </div>
+
     <div class="about-grid reveal">
       <div class="about-text">
-        <p>
-          I work at the intersection of <em>biology, data engineering and software</em> —
-          turning complex biological data into reliable, reusable workflows that
-          R&amp;D teams can depend on day to day.
-        </p>
-        <p>
-          With a Master's in Bioinformatics (Platform Engineering track) and 2+ years
-          of hands-on industry experience, I specialise in
-          <strong>industrialising spatial transcriptomics analyses</strong> and integrating
-          imaging with omics data in multi-modal frameworks.
-        </p>
-        <p>
-          Everything I build is designed with real industry constraints in mind: scalable
-          architectures, clear separation of data/code/config, and documentation written
-          for stakeholders beyond the academic world.
-        </p>
-        <p>
-          Target sectors: <strong>Biotech &amp; pharma R&amp;D</strong>,
-          MedTech &amp; diagnostics, spatial biology, digital pathology,
-          and health data platforms.
-        </p>
+        <div data-lang="fr">
+          <p>Je travaille à l'intersection de <em>la biologie, de l'ingénierie des données et du développement logiciel</em> — en transformant des données biologiques complexes en workflows fiables et réutilisables sur lesquels les équipes R&amp;D peuvent compter au quotidien.</p>
+          <p>Titulaire d'un Master en Bioinformatique (parcours Ingénierie des Plateformes) et forte de plus de 2 ans d'expérience industrielle, je me spécialise dans <strong>l'industrialisation des analyses de transcriptomique spatiale</strong> et l'intégration de l'imagerie avec les données omiques.</p>
+          <p>Mon approche priorise les vraies contraintes industrielles : architectures scalables, séparation claire données/code/configuration, et documentation accessible aux parties prenantes non académiques.</p>
+          <p>Secteurs cibles : <strong>Biotech &amp; Pharma R&amp;D</strong>, MedTech &amp; diagnostics, biologie spatiale, pathologie digitale et plateformes de données de santé.</p>
+        </div>
+        <div data-lang="en">
+          <p>I work at the intersection of <em>biology, data engineering and software</em> — turning complex biological data into reliable, reusable workflows that R&amp;D teams can depend on day to day.</p>
+          <p>With a Master's in Bioinformatics (Platform Engineering track) and 2+ years of hands-on industry experience, I specialise in <strong>industrialising spatial transcriptomics analyses</strong> and integrating imaging with omics data in multi-modal frameworks.</p>
+          <p>My approach prioritises real industry constraints: scalable architectures, clear separation of data/code/config, and documentation accessible to non-academic stakeholders.</p>
+          <p>Target sectors: <strong>Biotech &amp; Pharma R&amp;D</strong>, MedTech &amp; diagnostics, spatial biology, digital pathology and health data platforms.</p>
+        </div>
       </div>
       <div class="about-card">
         <div class="about-card-row">
-          <div class="about-card-label">Education</div>
-          <div class="about-card-value">MSc Bioinformatics<br>Platform Engineering</div>
+          <div class="about-card-label" data-lang="fr">Formation</div>
+          <div class="about-card-label" data-lang="en">Education</div>
+          <div class="about-card-value">Master Bioinformatique<br>Ingénierie des Plateformes</div>
         </div>
         <div class="about-card-row">
-          <div class="about-card-label">Current role</div>
-          <div class="about-card-value">Bioinformatician · 2+ yrs</div>
+          <div class="about-card-label" data-lang="fr">Poste actuel</div>
+          <div class="about-card-label" data-lang="en">Current role</div>
+          <div class="about-card-value" data-lang="fr">Bioinformaticienne · 2+ ans</div>
+          <div class="about-card-value" data-lang="en">Bioinformatician · 2+ yrs</div>
         </div>
         <div class="about-card-row">
           <div class="about-card-label">Location</div>
           <div class="about-card-value">Paris, France</div>
         </div>
         <div class="about-card-row">
-          <div class="about-card-label">Availability</div>
-          <div class="about-card-value">Paris &amp; EU Remote</div>
+          <div class="about-card-label" data-lang="fr">Disponibilité</div>
+          <div class="about-card-label" data-lang="en">Availability</div>
+          <div class="about-card-value" data-lang="fr">Paris &amp; Remote EU</div>
+          <div class="about-card-value" data-lang="en">Paris &amp; EU Remote</div>
         </div>
         <div class="about-card-row">
-          <div class="about-card-label">Languages</div>
-          <div class="about-card-value">French · English</div>
+          <div class="about-card-label" data-lang="fr">Langues</div>
+          <div class="about-card-label" data-lang="en">Languages</div>
+          <div class="about-card-value">Français · English</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─────────── SKILLS ─────────── -->
+<!-- ─── SKILLS ─── -->
 <section id="skills">
   <div class="section-inner">
-    <div class="reveal">
+    <div class="reveal" data-lang="fr">
+      <div class="section-label">Compétences</div>
+      <h2>Outils &amp; méthodes.</h2>
+    </div>
+    <div class="reveal" data-lang="en">
       <div class="section-label">Technical Stack</div>
       <h2>Tools &amp; methods.</h2>
     </div>
     <div class="skills-table stagger">
       <div class="skill-cell">
         <div class="skill-cat">Spatial Omics</div>
-        <h3>Omics Analysis</h3>
+        <h3 data-lang="fr">Analyse Omique</h3>
+        <h3 data-lang="en">Omics Analysis</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Visium</span>
-          <span class="skill-tag">Xenium</span>
-          <span class="skill-tag">Visium HD</span>
-          <span class="skill-tag">Scanpy</span>
-          <span class="skill-tag">Squidpy</span>
-          <span class="skill-tag">AnnData</span>
-          <span class="skill-tag">Single-cell</span>
+          <span class="skill-tag">Visium</span><span class="skill-tag">Xenium</span>
+          <span class="skill-tag">Visium HD</span><span class="skill-tag">Scanpy</span>
+          <span class="skill-tag">Squidpy</span><span class="skill-tag">AnnData</span>
+          <span class="skill-tag" data-lang="fr">Analyse single-cell</span>
+          <span class="skill-tag" data-lang="en">Single-cell analysis</span>
         </div>
       </div>
       <div class="skill-cell">
-        <div class="skill-cat">Imaging</div>
-        <h3>Biomedical Imaging</h3>
+        <div class="skill-cat" data-lang="fr">Imagerie</div>
+        <div class="skill-cat" data-lang="en">Imaging</div>
+        <h3 data-lang="fr">Imagerie Biomédicale</h3>
+        <h3 data-lang="en">Biomedical Imaging</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Microscopy</span>
-          <span class="skill-tag">Histology images</span>
-          <span class="skill-tag">scikit-image</span>
-          <span class="skill-tag">napari</span>
+          <span class="skill-tag" data-lang="fr">Microscopie</span>
+          <span class="skill-tag" data-lang="en">Microscopy</span>
+          <span class="skill-tag" data-lang="fr">Images histologiques</span>
+          <span class="skill-tag" data-lang="en">Histology images</span>
+          <span class="skill-tag">scikit-image</span><span class="skill-tag">napari</span>
           <span class="skill-tag">Zarr</span>
-          <span class="skill-tag">Feature extraction</span>
+          <span class="skill-tag" data-lang="fr">Extraction de features</span>
+          <span class="skill-tag" data-lang="en">Feature extraction</span>
         </div>
       </div>
       <div class="skill-cell">
-        <div class="skill-cat">Data Engineering</div>
-        <h3>Pipelines &amp; Data</h3>
+        <div class="skill-cat" data-lang="fr">Ingénierie des Données</div>
+        <div class="skill-cat" data-lang="en">Data Engineering</div>
+        <h3 data-lang="fr">Pipelines &amp; Données</h3>
+        <h3 data-lang="en">Pipelines &amp; Data</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">Python</span><span class="skill-tag">SQL</span>
+          <span class="skill-tag">PostgreSQL</span><span class="skill-tag">FastAPI</span>
           <span class="skill-tag">Parquet</span>
-          <span class="skill-tag">ETL design</span>
-          <span class="skill-tag">Data modeling</span>
+          <span class="skill-tag" data-lang="fr">Conception ETL</span>
+          <span class="skill-tag" data-lang="en">ETL design</span>
+          <span class="skill-tag" data-lang="fr">Modélisation des données</span>
+          <span class="skill-tag" data-lang="en">Data modeling</span>
         </div>
       </div>
       <div class="skill-cell">
-        <div class="skill-cat">Orchestration &amp; DevOps</div>
-        <h3>Reproducibility</h3>
+        <div class="skill-cat" data-lang="fr">Orchestration &amp; DevOps</div>
+        <div class="skill-cat" data-lang="en">Orchestration &amp; DevOps</div>
+        <h3 data-lang="fr">Reproductibilité</h3>
+        <h3 data-lang="en">Reproducibility</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Nextflow</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Docker Compose</span>
-          <span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">Nextflow</span><span class="skill-tag">Docker</span>
+          <span class="skill-tag">Docker Compose</span><span class="skill-tag">GitHub Actions</span>
           <span class="skill-tag">CI/CD</span>
-          <span class="skill-tag">Config management</span>
+          <span class="skill-tag" data-lang="fr">Gestion de configuration</span>
+          <span class="skill-tag" data-lang="en">Config management</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─────────── PROJECTS ─────────── -->
+<!-- ─── PROJECTS ─── -->
 <section id="projects">
   <div class="section-inner">
-    <div class="reveal">
+    <div class="reveal" data-lang="fr">
+      <div class="section-label">Projets</div>
+      <h2>Travaux sélectionnés.</h2>
+    </div>
+    <div class="reveal" data-lang="en">
       <div class="section-label">Projects</div>
       <h2>Selected work.</h2>
     </div>
@@ -690,54 +610,61 @@
         <div class="proj-num">01</div>
         <div>
           <div class="proj-cat">Spatial Omics</div>
-          <h3>Production-Ready Spatial Transcriptomics Pipeline</h3>
-          <p>A fully automated and reproducible pipeline for spatial transcriptomics analysis on public human datasets, designed with biotech and diagnostic workflows in mind.</p>
+          <h3 data-lang="fr">Pipeline de Transcriptomique Spatiale Prêt pour la Production</h3>
+          <h3 data-lang="en">Production-Ready Spatial Transcriptomics Pipeline</h3>
+          <p data-lang="fr">Pipeline entièrement automatisé et reproductible pour l'analyse de transcriptomique spatiale sur des données humaines publiques, conçu pour des workflows biotech et diagnostics.</p>
+          <p data-lang="en">A fully automated and reproducible pipeline for spatial transcriptomics analysis on public human datasets, designed with biotech and diagnostic workflows in mind.</p>
           <div class="proj-stack">
-            <span class="proj-tag">Nextflow</span>
-            <span class="proj-tag">Scanpy</span>
-            <span class="proj-tag">Squidpy</span>
-            <span class="proj-tag">Docker</span>
+            <span class="proj-tag">Nextflow</span><span class="proj-tag">Scanpy</span>
+            <span class="proj-tag">Squidpy</span><span class="proj-tag">Docker</span>
             <span class="proj-tag">Human Visium</span>
           </div>
         </div>
         <div class="proj-link-col">
-          <a href="./projects/spatial-omics-pipeline.md" class="proj-link">View</a>
+          <a href="./projects/spatial-omics-pipeline.md" class="proj-link" data-lang="fr">Voir</a>
+          <a href="./projects/spatial-omics-pipeline.md" class="proj-link" data-lang="en">View</a>
         </div>
       </div>
 
       <div class="project-item">
         <div class="proj-num">02</div>
         <div>
-          <div class="proj-cat">Multimodal Analysis</div>
-          <h3>Multimodal Imaging × Transcriptomics</h3>
-          <p>Integration of morphological features extracted from images with spatial gene expression data to enable multi-modal biological insights.</p>
+          <div class="proj-cat" data-lang="fr">Analyse Multimodale</div>
+          <div class="proj-cat" data-lang="en">Multimodal Analysis</div>
+          <h3 data-lang="fr">Imagerie Multimodale × Transcriptomique</h3>
+          <h3 data-lang="en">Multimodal Imaging × Transcriptomics</h3>
+          <p data-lang="fr">Intégration de features morphologiques extraites d'images avec des données d'expression génique spatiale pour des insights biologiques multi-modaux.</p>
+          <p data-lang="en">Integration of morphological features extracted from images with spatial gene expression data to enable multi-modal biological insights.</p>
           <div class="proj-stack">
-            <span class="proj-tag">Python</span>
-            <span class="proj-tag">AnnData</span>
+            <span class="proj-tag">Python</span><span class="proj-tag">AnnData</span>
             <span class="proj-tag">Zarr</span>
-            <span class="proj-tag">Microscopy</span>
+            <span class="proj-tag" data-lang="fr">Microscopie</span>
+            <span class="proj-tag" data-lang="en">Microscopy</span>
           </div>
         </div>
         <div class="proj-link-col">
-          <a href="./projects/multimodal-imaging-omics.md" class="proj-link">View</a>
+          <a href="./projects/multimodal-imaging-omics.md" class="proj-link" data-lang="fr">Voir</a>
+          <a href="./projects/multimodal-imaging-omics.md" class="proj-link" data-lang="en">View</a>
         </div>
       </div>
 
       <div class="project-item">
         <div class="proj-num">03</div>
         <div>
-          <div class="proj-cat">Data Engineering</div>
-          <h3>Health Data Engineering Platform (Mini-Prod)</h3>
-          <p>A lightweight data platform simulating an internal biotech data stack: ingestion, validation, storage and programmatic access to omics results.</p>
+          <div class="proj-cat" data-lang="fr">Ingénierie des Données</div>
+          <div class="proj-cat" data-lang="en">Data Engineering</div>
+          <h3 data-lang="fr">Plateforme de Données de Santé (Mini-Prod)</h3>
+          <h3 data-lang="en">Health Data Engineering Platform (Mini-Prod)</h3>
+          <p data-lang="fr">Plateforme de données légère simulant un stack interne biotech : ingestion, validation, stockage et accès programmatique aux résultats omiques.</p>
+          <p data-lang="en">A lightweight data platform simulating an internal biotech data stack: ingestion, validation, storage and programmatic access to omics results.</p>
           <div class="proj-stack">
-            <span class="proj-tag">Python</span>
-            <span class="proj-tag">PostgreSQL</span>
-            <span class="proj-tag">FastAPI</span>
-            <span class="proj-tag">Docker</span>
+            <span class="proj-tag">Python</span><span class="proj-tag">PostgreSQL</span>
+            <span class="proj-tag">FastAPI</span><span class="proj-tag">Docker</span>
           </div>
         </div>
         <div class="proj-link-col">
-          <a href="./projects/health-data-platform.md" class="proj-link">View</a>
+          <a href="./projects/health-data-platform.md" class="proj-link" data-lang="fr">Voir</a>
+          <a href="./projects/health-data-platform.md" class="proj-link" data-lang="en">View</a>
         </div>
       </div>
 
@@ -745,17 +672,21 @@
         <div class="proj-num">04</div>
         <div>
           <div class="proj-cat">MLOps</div>
-          <h3>Automated Bioinformatics Platform</h3>
-          <p>A mini production-like platform to launch, monitor and expose bioinformatics pipelines and results, with full CI/CD and reproducibility guarantees.</p>
+          <h3 data-lang="fr">Plateforme Bioinformatique Automatisée</h3>
+          <h3 data-lang="en">Automated Bioinformatics Platform</h3>
+          <p data-lang="fr">Mini-plateforme de type production pour lancer, monitorer et exposer des pipelines bioinformatiques et leurs résultats, avec CI/CD complet.</p>
+          <p data-lang="en">A mini production-like platform to launch, monitor and expose bioinformatics pipelines and results, with full CI/CD and reproducibility guarantees.</p>
           <div class="proj-stack">
-            <span class="proj-tag">Nextflow</span>
-            <span class="proj-tag">CI/CD</span>
-            <span class="proj-tag">Monitoring</span>
-            <span class="proj-tag">Reproducibility</span>
+            <span class="proj-tag">Nextflow</span><span class="proj-tag">CI/CD</span>
+            <span class="proj-tag" data-lang="fr">Monitoring</span>
+            <span class="proj-tag" data-lang="en">Monitoring</span>
+            <span class="proj-tag" data-lang="fr">Reproductibilité</span>
+            <span class="proj-tag" data-lang="en">Reproducibility</span>
           </div>
         </div>
         <div class="proj-link-col">
-          <a href="./projects/bioinformatics-platform.md" class="proj-link">View</a>
+          <a href="./projects/bioinformatics-platform.md" class="proj-link" data-lang="fr">Voir</a>
+          <a href="./projects/bioinformatics-platform.md" class="proj-link" data-lang="en">View</a>
         </div>
       </div>
 
@@ -763,10 +694,14 @@
   </div>
 </section>
 
-<!-- ─────────── PUBLICATIONS ─────────── -->
+<!-- ─── PUBLICATIONS ─── -->
 <section id="publications">
   <div class="section-inner">
-    <div class="reveal">
+    <div class="reveal" data-lang="fr">
+      <div class="section-label">Publications</div>
+      <h2>Contributions scientifiques.</h2>
+    </div>
+    <div class="reveal" data-lang="en">
       <div class="section-label">Publications</div>
       <h2>Scientific contributions.</h2>
     </div>
@@ -786,34 +721,35 @@
       -->
 
       <div class="pub-empty">
-        Tes publications apparaîtront ici.<br>
-        Utilise le template HTML en commentaire : <code>&lt;div class="pub-item"&gt;</code>
+        <span data-lang="fr">Tes publications apparaîtront ici — utilise le template HTML en commentaire : <code>&lt;div class="pub-item"&gt;</code></span>
+        <span data-lang="en">Your publications will appear here — use the HTML comment template above: <code>&lt;div class="pub-item"&gt;</code></span>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ─────────── CONTACT ─────────── -->
+<!-- ─── CONTACT ─── -->
 <section id="contact">
   <div class="section-inner">
     <div class="contact-grid reveal">
       <div class="contact-left">
-        <div class="section-label">Contact</div>
-        <h2>Open to the<br>right opportunity.</h2>
-        <p>
-          Je recherche des postes en biotech, pharma R&amp;D, digital pathology
-          ou data engineering pour la santé — Paris ou remote EU de qualité.
-        </p>
+        <div data-lang="fr">
+          <div class="section-label">Contact</div>
+          <h2>Ouverte à la<br>bonne opportunité.</h2>
+          <p>Je recherche des postes en biotech, pharma R&amp;D, pathologie digitale ou data engineering pour la santé — Paris ou remote EU de qualité.</p>
+        </div>
+        <div data-lang="en">
+          <div class="section-label">Contact</div>
+          <h2>Open to the<br>right opportunity.</h2>
+          <p>Looking for roles in biotech, pharma R&amp;D, digital pathology or health data engineering — Paris-based or high-quality remote across the EU.</p>
+        </div>
       </div>
       <div>
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/cadisha-saint-hilaire-456326203/" class="contact-row" target="_blank">
             <div class="contact-row-left">
-              <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
+              <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
               <div>
                 <div class="contact-platform">LinkedIn</div>
                 <div class="contact-handle">Cadisha Saint-Hilaire</div>
@@ -823,9 +759,7 @@
           </a>
           <a href="https://github.com/CSaint-Hilaire" class="contact-row" target="_blank">
             <div class="contact-row-left">
-              <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
-              </svg>
+              <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
               <div>
                 <div class="contact-platform">GitHub</div>
                 <div class="contact-handle">CSaint-Hilaire</div>
@@ -835,10 +769,7 @@
           </a>
           <a href="mailto:sainthilaire.cadisha@exemple.com" class="contact-row">
             <div class="contact-row-left">
-              <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
+              <svg class="contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               <div>
                 <div class="contact-platform">Email</div>
                 <div class="contact-handle">sainthilaire.cadisha@exemple.com</div>
@@ -852,33 +783,46 @@
   </div>
 </section>
 
-<!-- ─────────── FOOTER ─────────── -->
+<!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-l">Cadisha Saint-Hilaire</div>
-  <div class="footer-r">© 2025 · Bioinformatics &amp; Data Engineer · Paris</div>
+  <div class="footer-r" data-lang="fr">© 2025 · Ingénieure Bioinformatique &amp; Data · Paris</div>
+  <div class="footer-r" data-lang="en">© 2025 · Bioinformatics &amp; Data Engineer · Paris</div>
 </footer>
 
 <script>
-  // Scroll reveal
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        observer.unobserve(e.target);
-      }
+  // ─── LANG SWITCHER ───
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.documentElement.lang = lang;
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.title = lang === 'fr'
+      ? 'Cadisha Saint-Hilaire | Ingénieure Bioinformatique & Data'
+      : 'Cadisha Saint-Hilaire | Bioinformatics & Data Engineer';
+    // Re-trigger scroll animations for newly visible elements
+    document.querySelectorAll('.reveal, .stagger').forEach(el => {
+      el.classList.remove('in');
     });
-  }, { threshold: 0.07 });
-  document.querySelectorAll('.reveal, .stagger').forEach(el => observer.observe(el));
+    setTimeout(() => {
+      document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
+    }, 50);
+  }
 
-  // Nav active highlight
+  // ─── SCROLL REVEAL ───
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
+
+  // ─── NAV ACTIVE ───
   const sects = document.querySelectorAll('section[id]');
-  const links = document.querySelectorAll('.nav-links a');
+  const navLinks = document.querySelectorAll('.nav-links a');
   const ioNav = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        links.forEach(a => a.classList.remove('active'));
-        const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
-        if (a) a.classList.add('active');
+        navLinks.forEach(a => a.classList.remove('active'));
+        document.querySelectorAll(`.nav-links a[href="#${e.target.id}"]`).forEach(a => a.classList.add('active'));
       }
     });
   }, { rootMargin: '-38% 0px -58% 0px' });
