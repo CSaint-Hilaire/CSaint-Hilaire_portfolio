@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cadisha Saint-Hilaire | Ingénieure Bioinformatique & Data</title>
+<title>Cadisha Saint-Hilaire | Bioinformaticienne · Imagerie & Spatial Omics</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -46,7 +46,7 @@
     background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
-  /* ── LANG HIDDEN ── */
+  /* ── LANG ── */
   [data-lang] { display: none; }
   .lang-fr [data-lang="fr"],
   .lang-en [data-lang="en"] { display: revert; }
@@ -60,14 +60,8 @@
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--rule);
   }
-
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.15rem; font-weight: 600; color: var(--ink);
-  }
-
+  .nav-logo { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--ink); }
   .nav-right { display:flex; align-items:center; gap:0.5rem; }
-
   .nav-links { display:flex; list-style:none; }
   .nav-links a {
     font-family: var(--mono); font-size:0.68rem;
@@ -78,11 +72,8 @@
     border-bottom:2px solid transparent;
     transition: color .2s, border-color .2s;
   }
-  .nav-links a:hover, .nav-links a.active {
-    color: var(--sage-deep); border-bottom-color: var(--sage);
-  }
+  .nav-links a:hover, .nav-links a.active { color: var(--sage-deep); border-bottom-color: var(--sage); }
 
-  /* ── LANG SWITCHER ── */
   .lang-switcher {
     display: flex; align-items: center;
     border: 1px solid var(--parchment-3);
@@ -96,15 +87,9 @@
     border:none; background:transparent;
     color: var(--ink-dim); transition: all .2s;
   }
-  .lang-btn.active {
-    background: var(--sage-deep); color: var(--off-white);
-  }
-  .lang-btn:not(.active):hover {
-    background: var(--sage-light); color: var(--sage-deep);
-  }
-  .lang-divider {
-    width:1px; height:24px; background: var(--parchment-3);
-  }
+  .lang-btn.active { background: var(--sage-deep); color: var(--off-white); }
+  .lang-btn:not(.active):hover { background: var(--sage-light); color: var(--sage-deep); }
+  .lang-divider { width:1px; height:24px; background: var(--parchment-3); }
 
   /* ── HERO ── */
   #hero {
@@ -113,13 +98,11 @@
     border-bottom:1px solid var(--rule);
     padding-top:64px;
   }
-
   .hero-left {
     padding:7rem 4rem 5rem;
     border-right:1px solid var(--rule);
     display:flex; flex-direction:column; justify-content:center;
   }
-
   .hero-eyebrow {
     font-family: var(--mono); font-size:0.68rem;
     letter-spacing:0.18em; text-transform:uppercase;
@@ -131,7 +114,7 @@
 
   h1 {
     font-family: var(--serif);
-    font-size: clamp(3.2rem,5vw,5.6rem);
+    font-size: clamp(3rem,4.8vw,5.4rem);
     font-weight:600; line-height:1.06;
     color: var(--ink); letter-spacing:-.01em;
     margin-bottom:1.8rem;
@@ -145,9 +128,7 @@
     margin-bottom:2.8rem;
     animation: up .6s .16s ease both;
   }
-
   .hero-cta { display:flex; gap:.8rem; animation: up .6s .24s ease both; }
-
   .btn {
     font-family: var(--mono); font-size:0.68rem;
     letter-spacing:0.12em; text-transform:uppercase;
@@ -160,20 +141,12 @@
   .btn-ghost:hover { border-color:var(--sage); color:var(--sage-deep); }
 
   .hero-right { display:grid; grid-template-rows:1fr auto; background:var(--parchment); }
-
   .hero-stat {
     padding:3.5rem 4rem; border-bottom:1px solid var(--rule);
     display:flex; flex-direction:column; justify-content:flex-end;
   }
-  .hero-stat-label {
-    font-family:var(--mono); font-size:0.65rem;
-    letter-spacing:.15em; text-transform:uppercase;
-    color:var(--ink-dim); margin-bottom:.5rem;
-  }
-  .hero-stat-value {
-    font-family:var(--serif); font-size:2.2rem;
-    font-weight:600; color:var(--ink); line-height:1.1;
-  }
+  .hero-stat-label { font-family:var(--mono); font-size:0.65rem; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:.5rem; }
+  .hero-stat-value { font-family:var(--serif); font-size:2.1rem; font-weight:600; color:var(--ink); line-height:1.1; }
   .hero-stat-value em { font-style:italic; color:var(--sage-deep); }
   .hero-stat-sub { font-size:.85rem; color:var(--ink-dim); margin-top:.4rem; }
 
@@ -192,7 +165,6 @@
 
   /* ── LAYOUT ── */
   .section-inner { max-width:1080px; margin:0 auto; padding:6rem 4rem; }
-
   .section-label {
     font-family:var(--mono); font-size:0.67rem;
     letter-spacing:.18em; text-transform:uppercase;
@@ -200,7 +172,6 @@
     display:flex; align-items:center; gap:.7rem;
   }
   .section-label::before { content:''; display:block; width:22px; height:1px; background:var(--sage); }
-
   h2 {
     font-family: var(--serif);
     font-size: clamp(2rem,3.2vw,2.8rem);
@@ -211,26 +182,18 @@
 
   /* ── ABOUT ── */
   #about { border-bottom:1px solid var(--rule); }
-
   .about-grid { display:grid; grid-template-columns:1.8fr 1fr; gap:5rem; align-items:start; }
-
   .about-text p { font-size:1.02rem; color:var(--ink-mid); margin-bottom:1.3rem; line-height:1.85; }
   .about-text p em { font-style:italic; color:var(--ink); font-family:var(--serif); font-size:1.08rem; }
   .about-text p strong { color:var(--sage-deep); font-weight:500; }
-
   .about-card { background:var(--parchment); border:1px solid var(--rule); border-radius:3px; overflow:hidden; }
   .about-card-row { padding:1rem 1.4rem; border-bottom:1px solid var(--rule-soft); }
   .about-card-row:last-child { border-bottom:none; }
-  .about-card-label {
-    font-family:var(--mono); font-size:0.62rem;
-    letter-spacing:.13em; text-transform:uppercase;
-    color:var(--ink-dim); margin-bottom:.25rem;
-  }
-  .about-card-value { font-family:var(--serif); font-size:.98rem; color:var(--ink); font-weight:500; }
+  .about-card-label { font-family:var(--mono); font-size:0.62rem; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:.25rem; }
+  .about-card-value { font-family:var(--serif); font-size:.98rem; color:var(--ink); font-weight:500; line-height:1.5; }
 
   /* ── SKILLS ── */
   #skills { background:var(--parchment); border-bottom:1px solid var(--rule); }
-
   .skills-table { border:1px solid var(--rule); display:grid; grid-template-columns:1fr 1fr; }
   .skill-cell {
     padding:2rem 2.2rem; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);
@@ -239,11 +202,7 @@
   .skill-cell:nth-child(2n) { border-right:none; }
   .skill-cell:nth-last-child(-n+2) { border-bottom:none; }
   .skill-cell:hover { background:var(--off-white); }
-  .skill-cat {
-    font-family:var(--mono); font-size:0.63rem;
-    letter-spacing:.14em; text-transform:uppercase;
-    color:var(--sage); margin-bottom:.45rem;
-  }
+  .skill-cat { font-family:var(--mono); font-size:0.63rem; letter-spacing:.14em; text-transform:uppercase; color:var(--sage); margin-bottom:.45rem; }
   .skill-cell h3 { font-family:var(--serif); font-size:1.15rem; font-weight:600; color:var(--ink); margin-bottom:1rem; }
   .skill-tags { display:flex; flex-wrap:wrap; gap:.38rem; }
   .skill-tag {
@@ -256,7 +215,6 @@
 
   /* ── PROJECTS ── */
   #projects { border-bottom:1px solid var(--rule); }
-
   .project-list { display:flex; flex-direction:column; }
   .project-item {
     display:grid; grid-template-columns:56px 1fr 100px;
@@ -266,13 +224,8 @@
   }
   .project-item:last-child { border-bottom:1px solid var(--rule); }
   .project-item:hover { background:var(--parchment); margin:0 -2rem; padding-left:2rem; padding-right:2rem; }
-
   .proj-num { font-family:var(--mono); font-size:.7rem; color:var(--ink-dim); padding-top:.3rem; }
-  .proj-cat {
-    font-family:var(--mono); font-size:.63rem;
-    letter-spacing:.13em; text-transform:uppercase;
-    color:var(--sage); margin-bottom:.35rem;
-  }
+  .proj-cat { font-family:var(--mono); font-size:.63rem; letter-spacing:.13em; text-transform:uppercase; color:var(--sage); margin-bottom:.35rem; }
   .project-item h3 { font-family:var(--serif); font-size:1.2rem; font-weight:600; color:var(--ink); margin-bottom:.5rem; line-height:1.3; }
   .project-item p { font-size:.9rem; color:var(--ink-mid); line-height:1.7; max-width:600px; }
   .proj-stack { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:1rem; }
@@ -281,6 +234,13 @@
     padding:.17rem .48rem; border:1px solid var(--sage-light);
     border-radius:2px; color:var(--sage-deep); background:var(--sage-light);
   }
+  .proj-badge {
+    display:inline-block; font-family:var(--mono); font-size:.6rem;
+    letter-spacing:.08em; text-transform:uppercase;
+    padding:.15rem .5rem; border-radius:2px; margin-bottom:.5rem;
+  }
+  .badge-lab { background:rgba(90,122,94,.12); color:var(--sage-deep); border:1px solid rgba(90,122,94,.25); }
+  .badge-perso { background:rgba(139,115,85,.1); color:#6b5535; border:1px solid rgba(139,115,85,.2); }
   .proj-link-col { display:flex; align-items:flex-start; padding-top:.4rem; }
   .proj-link {
     font-family:var(--mono); font-size:.65rem;
@@ -294,7 +254,6 @@
 
   /* ── PUBLICATIONS ── */
   #publications { background:var(--parchment); border-bottom:1px solid var(--rule); }
-
   .pub-list { display:flex; flex-direction:column; }
   .pub-item {
     display:grid; grid-template-columns:60px 1fr;
@@ -353,6 +312,7 @@
   .stagger.in > *:nth-child(2) { transition-delay:.07s; }
   .stagger.in > *:nth-child(3) { transition-delay:.13s; }
   .stagger.in > *:nth-child(4) { transition-delay:.19s; }
+  .stagger.in > *:nth-child(5) { transition-delay:.25s; }
 
   ::-webkit-scrollbar { width:4px; }
   ::-webkit-scrollbar-track { background:var(--parchment); }
@@ -376,8 +336,6 @@
   }
 </style>
 </head>
-
-<!-- VERSION FRANÇAISE par défaut -->
 <body class="lang-fr">
 
 <!-- ─── NAV ─── -->
@@ -402,60 +360,61 @@
 <!-- ─── HERO ─── -->
 <section id="hero">
   <div class="hero-left">
-    <!-- FR -->
+
     <div data-lang="fr">
-      <div class="hero-eyebrow">Bioinformatique &amp; Ingénierie des Données</div>
-      <h1>Des pipelines pour<br>les <em>sciences du vivant</em>,<br>pensés pour durer.</h1>
+      <div class="hero-eyebrow">Bioinformatique · Imagerie &amp; Spatial Omics</div>
+      <h1>Décrypter le vivant,<br>du pixel au <em>gène</em>.</h1>
       <p class="hero-desc">
-        Je conçois des workflows de données prêts pour la production —
-        transcriptomique spatiale, imagerie biomédicale et données de santé —
-        avec un focus sur la reproductibilité et les contraintes industrielles réelles.
+        Je développe des pipelines robustes à l'intersection de l'analyse d'images biomédicales
+        et de la transcriptomique spatiale — pour transformer des données complexes
+        en résultats reproductibles et exploitables.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">Voir les projets</a>
         <a href="#contact" class="btn btn-ghost">Me contacter</a>
       </div>
     </div>
-    <!-- EN -->
+
     <div data-lang="en">
-      <div class="hero-eyebrow">Bioinformatics &amp; Data Engineering</div>
-      <h1>Pipelines for<br><em>life sciences</em>,<br>built to last.</h1>
+      <div class="hero-eyebrow">Bioinformatics · Imaging &amp; Spatial Omics</div>
+      <h1>From pixel<br>to <em>gene</em> —<br>at scale.</h1>
       <p class="hero-desc">
-        I design production-ready workflows for spatial transcriptomics,
-        biomedical imaging and health data — with a focus on reproducibility,
-        traceability and real industry constraints.
+        I build robust, maintainable pipelines at the intersection of biomedical image analysis
+        and spatial transcriptomics — turning complex biological data into reproducible,
+        production-ready results.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">Featured Projects</a>
         <a href="#contact" class="btn btn-ghost">Get in Touch</a>
       </div>
     </div>
+
   </div>
 
   <div class="hero-right">
     <div class="hero-stat">
-      <div class="hero-stat-label" data-lang="fr">Spécialisation</div>
-      <div class="hero-stat-label" data-lang="en">Specialisation</div>
-      <div class="hero-stat-value"><em>Spatial</em><br>Transcriptomics</div>
-      <div class="hero-stat-sub">Visium · Xenium · Visium HD</div>
+      <div class="hero-stat-label" data-lang="fr">Double spécialisation</div>
+      <div class="hero-stat-label" data-lang="en">Dual specialisation</div>
+      <div class="hero-stat-value"><em>Imagerie 3D</em><br>&amp; Spatial Omics</div>
+      <div class="hero-stat-sub">Xenium · Visium HD · Microscopie confocale</div>
     </div>
     <div>
       <div class="hero-stat" style="border-bottom:1px solid var(--rule)">
         <div class="hero-stat-label" data-lang="fr">Expérience</div>
         <div class="hero-stat-label" data-lang="en">Experience</div>
-        <div class="hero-stat-value">2+ ans</div>
-        <div class="hero-stat-sub" data-lang="fr">Industrie · Bioinformatique</div>
-        <div class="hero-stat-sub" data-lang="en">Industry · Bioinformatics</div>
+        <div class="hero-stat-value">2–3 ans</div>
+        <div class="hero-stat-sub" data-lang="fr">Recherche · Biologie du développement</div>
+        <div class="hero-stat-sub" data-lang="en">Research · Developmental Biology</div>
       </div>
       <div class="hero-chips">
         <span class="chip">Spatial Omics</span>
-        <span class="chip">Data Engineering</span>
+        <span class="chip" data-lang="fr">Imagerie 3D</span>
+        <span class="chip" data-lang="en">3D Imaging</span>
         <span class="chip">Python · Nextflow</span>
-        <span class="chip" data-lang="fr">Imagerie Biomédicale</span>
-        <span class="chip" data-lang="en">Biomedical Imaging</span>
+        <span class="chip" data-lang="fr">Segmentation cellulaire</span>
+        <span class="chip" data-lang="en">Cell segmentation</span>
+        <span class="chip">Blender · Verge3D</span>
         <span class="chip">Paris, France</span>
-        <span class="chip" data-lang="fr">Remote EU</span>
-        <span class="chip" data-lang="en">EU Remote</span>
       </div>
     </div>
   </div>
@@ -467,39 +426,98 @@
 
     <div class="reveal" data-lang="fr">
       <div class="section-label">À propos</div>
-      <h2>Là où la biologie<br>rencontre l'ingénierie.</h2>
+      <h2>Biologie, ingénierie,<br>et un goût pour la rigueur.</h2>
     </div>
     <div class="reveal" data-lang="en">
       <div class="section-label">About</div>
-      <h2>Where biology meets<br>production engineering.</h2>
+      <h2>Biology, engineering,<br>and a taste for rigor.</h2>
     </div>
 
     <div class="about-grid reveal">
       <div class="about-text">
+
         <div data-lang="fr">
-          <p>Je travaille à l'intersection de <em>la biologie, de l'ingénierie des données et du développement logiciel</em> — en transformant des données biologiques complexes en workflows fiables et réutilisables sur lesquels les équipes R&amp;D peuvent compter au quotidien.</p>
-          <p>Titulaire d'un Master en Bioinformatique (parcours Ingénierie des Plateformes) et forte de plus de 2 ans d'expérience industrielle, je me spécialise dans <strong>l'industrialisation des analyses de transcriptomique spatiale</strong> et l'intégration de l'imagerie avec les données omiques.</p>
-          <p>Mon approche priorise les vraies contraintes industrielles : architectures scalables, séparation claire données/code/configuration, et documentation accessible aux parties prenantes non académiques.</p>
-          <p>Secteurs cibles : <strong>Biotech &amp; Pharma R&amp;D</strong>, MedTech &amp; diagnostics, biologie spatiale, pathologie digitale et plateformes de données de santé.</p>
+          <p>
+            Mon parcours est atypique — et c'est précisément ce qui forge mon profil.
+            Partie d'une licence de Biologie Santé en Guadeloupe, je me suis progressivement
+            orientée vers la bioinformatique pour aller là où la biologie et l'ingénierie
+            se rejoignent vraiment. Aujourd'hui, j'ai <em>une double expertise rare</em> :
+            l'analyse d'images biologiques complexes et la transcriptomique spatiale.
+          </p>
+          <p>
+            Au quotidien, je travaille avec des chercheurs en biologie du développement
+            sur des embryons humains et murins. Je résous des problématiques concrètes
+            autour de l'imagerie 3D — débruitage, segmentation, comptage cellulaire,
+            reconstruction et annotation volumétrique avec Blender et Verge3D.
+            En parallèle, je mène des analyses de transcriptomique spatiale :
+            QC, clustering, annotation, intégration — et je contribue activement
+            à <strong>la caractérisation de nouvelles régions de l'œil humain</strong>
+            avec Xenium et Visium HD.
+          </p>
+          <p>
+            Ce qui me différencie : je ne m'arrête pas au script qui tourne une fois.
+            <strong>Je construis des pipelines automatisés, robustes et maintenables</strong>,
+            pensés pour être réutilisés, documentés et adaptables à des contextes industriels.
+          </p>
+          <p>
+            Secteurs ciblés : <strong>Biotech &amp; Pharma R&amp;D</strong>,
+            pathologie digitale, biologie spatiale, MedTech &amp; diagnostics.
+          </p>
         </div>
+
         <div data-lang="en">
-          <p>I work at the intersection of <em>biology, data engineering and software</em> — turning complex biological data into reliable, reusable workflows that R&amp;D teams can depend on day to day.</p>
-          <p>With a Master's in Bioinformatics (Platform Engineering track) and 2+ years of hands-on industry experience, I specialise in <strong>industrialising spatial transcriptomics analyses</strong> and integrating imaging with omics data in multi-modal frameworks.</p>
-          <p>My approach prioritises real industry constraints: scalable architectures, clear separation of data/code/config, and documentation accessible to non-academic stakeholders.</p>
-          <p>Target sectors: <strong>Biotech &amp; Pharma R&amp;D</strong>, MedTech &amp; diagnostics, spatial biology, digital pathology and health data platforms.</p>
+          <p>
+            My path is unconventional — and that's exactly what shapes my profile.
+            Starting with a Biology degree in Guadeloupe, I progressively moved towards
+            bioinformatics to work at the true intersection of biology and engineering.
+            Today I have <em>a rare dual expertise</em>: complex biomedical image analysis
+            and spatial transcriptomics.
+          </p>
+          <p>
+            Day to day, I work alongside developmental biology researchers on human
+            and mouse embryos. I tackle concrete imaging challenges — denoising,
+            segmentation, cell counting, 3D reconstruction and volumetric annotation
+            with Blender and Verge3D. In parallel, I run spatial transcriptomics analyses —
+            QC, clustering, annotation, integration — and actively contribute to
+            <strong>the characterisation of novel regions of the human eye</strong>
+            using Xenium and Visium HD.
+          </p>
+          <p>
+            What sets me apart: I don't stop at a script that runs once.
+            <strong>I build automated, robust and maintainable pipelines</strong>
+            — designed to be reused, documented and adaptable to industrial contexts.
+          </p>
+          <p>
+            Target sectors: <strong>Biotech &amp; Pharma R&amp;D</strong>,
+            digital pathology, spatial biology, MedTech &amp; diagnostics.
+          </p>
         </div>
+
       </div>
       <div class="about-card">
         <div class="about-card-row">
           <div class="about-card-label" data-lang="fr">Formation</div>
           <div class="about-card-label" data-lang="en">Education</div>
-          <div class="about-card-value">Master Bioinformatique<br>Ingénierie des Plateformes</div>
+          <div class="about-card-value" data-lang="fr">
+            Master Bioinformatique<br>Ingénierie de Plateforme<br>
+            <span style="font-size:.85rem;color:var(--ink-dim)">Université Paris Cité</span>
+          </div>
+          <div class="about-card-value" data-lang="en">
+            MSc Bioinformatics<br>Platform Engineering<br>
+            <span style="font-size:.85rem;color:var(--ink-dim)">Université Paris Cité</span>
+          </div>
         </div>
         <div class="about-card-row">
           <div class="about-card-label" data-lang="fr">Poste actuel</div>
           <div class="about-card-label" data-lang="en">Current role</div>
-          <div class="about-card-value" data-lang="fr">Bioinformaticienne · 2+ ans</div>
-          <div class="about-card-value" data-lang="en">Bioinformatician · 2+ yrs</div>
+          <div class="about-card-value" data-lang="fr">Bioinformaticienne<br><span style="font-size:.85rem;color:var(--ink-dim)">Biologie du développement · 2–3 ans</span></div>
+          <div class="about-card-value" data-lang="en">Bioinformatician<br><span style="font-size:.85rem;color:var(--ink-dim)">Developmental Biology · 2–3 yrs</span></div>
+        </div>
+        <div class="about-card-row">
+          <div class="about-card-label" data-lang="fr">Spécialités</div>
+          <div class="about-card-label" data-lang="en">Specialities</div>
+          <div class="about-card-value" data-lang="fr">Imagerie 3D · Spatial Omics<br>Automatisation de pipelines</div>
+          <div class="about-card-value" data-lang="en">3D Imaging · Spatial Omics<br>Pipeline automation</div>
         </div>
         <div class="about-card-row">
           <div class="about-card-label">Location</div>
@@ -518,6 +536,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -533,62 +552,78 @@
       <h2>Tools &amp; methods.</h2>
     </div>
     <div class="skills-table stagger">
+
       <div class="skill-cell">
-        <div class="skill-cat">Spatial Omics</div>
-        <h3 data-lang="fr">Analyse Omique</h3>
-        <h3 data-lang="en">Omics Analysis</h3>
+        <div class="skill-cat" data-lang="fr">Imagerie Biomédicale</div>
+        <div class="skill-cat" data-lang="en">Biomedical Imaging</div>
+        <h3 data-lang="fr">Analyse d'Images</h3>
+        <h3 data-lang="en">Image Analysis</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Visium</span><span class="skill-tag">Xenium</span>
-          <span class="skill-tag">Visium HD</span><span class="skill-tag">Scanpy</span>
-          <span class="skill-tag">Squidpy</span><span class="skill-tag">AnnData</span>
-          <span class="skill-tag" data-lang="fr">Analyse single-cell</span>
-          <span class="skill-tag" data-lang="en">Single-cell analysis</span>
-        </div>
-      </div>
-      <div class="skill-cell">
-        <div class="skill-cat" data-lang="fr">Imagerie</div>
-        <div class="skill-cat" data-lang="en">Imaging</div>
-        <h3 data-lang="fr">Imagerie Biomédicale</h3>
-        <h3 data-lang="en">Biomedical Imaging</h3>
-        <div class="skill-tags">
-          <span class="skill-tag" data-lang="fr">Microscopie</span>
-          <span class="skill-tag" data-lang="en">Microscopy</span>
+          <span class="skill-tag" data-lang="fr">Microscopie confocale</span>
+          <span class="skill-tag" data-lang="en">Confocal microscopy</span>
           <span class="skill-tag" data-lang="fr">Images histologiques</span>
           <span class="skill-tag" data-lang="en">Histology images</span>
-          <span class="skill-tag">scikit-image</span><span class="skill-tag">napari</span>
-          <span class="skill-tag">Zarr</span>
-          <span class="skill-tag" data-lang="fr">Extraction de features</span>
-          <span class="skill-tag" data-lang="en">Feature extraction</span>
+          <span class="skill-tag" data-lang="fr">Segmentation 3D</span>
+          <span class="skill-tag" data-lang="en">3D segmentation</span>
+          <span class="skill-tag">scikit-image</span>
+          <span class="skill-tag">napari</span>
+          <span class="skill-tag" data-lang="fr">Débruitage · Comptage</span>
+          <span class="skill-tag" data-lang="en">Denoising · Cell counting</span>
+          <span class="skill-tag">Blender</span>
+          <span class="skill-tag">Verge3D</span>
         </div>
       </div>
+
       <div class="skill-cell">
-        <div class="skill-cat" data-lang="fr">Ingénierie des Données</div>
-        <div class="skill-cat" data-lang="en">Data Engineering</div>
-        <h3 data-lang="fr">Pipelines &amp; Données</h3>
-        <h3 data-lang="en">Pipelines &amp; Data</h3>
+        <div class="skill-cat">Spatial Omics</div>
+        <h3 data-lang="fr">Transcriptomique Spatiale</h3>
+        <h3 data-lang="en">Spatial Transcriptomics</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Python</span><span class="skill-tag">SQL</span>
-          <span class="skill-tag">PostgreSQL</span><span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">Visium · Visium HD</span>
+          <span class="skill-tag">Xenium</span>
+          <span class="skill-tag">Scanpy · Squidpy</span>
+          <span class="skill-tag">AnnData</span>
+          <span class="skill-tag" data-lang="fr">QC · Clustering · Annotation</span>
+          <span class="skill-tag" data-lang="en">QC · Clustering · Annotation</span>
+          <span class="skill-tag" data-lang="fr">Analyse single-cell</span>
+          <span class="skill-tag" data-lang="en">Single-cell analysis</span>
+          <span class="skill-tag">Zarr</span>
+        </div>
+      </div>
+
+      <div class="skill-cell">
+        <div class="skill-cat" data-lang="fr">Ingénierie &amp; ML</div>
+        <div class="skill-cat" data-lang="en">Engineering &amp; ML</div>
+        <h3 data-lang="fr">Pipelines &amp; Modèles</h3>
+        <h3 data-lang="en">Pipelines &amp; Models</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">CNN · GNN</span>
+          <span class="skill-tag">SQL · PostgreSQL</span>
+          <span class="skill-tag">FastAPI</span>
           <span class="skill-tag">Parquet</span>
           <span class="skill-tag" data-lang="fr">Conception ETL</span>
           <span class="skill-tag" data-lang="en">ETL design</span>
-          <span class="skill-tag" data-lang="fr">Modélisation des données</span>
-          <span class="skill-tag" data-lang="en">Data modeling</span>
         </div>
       </div>
+
       <div class="skill-cell">
-        <div class="skill-cat" data-lang="fr">Orchestration &amp; DevOps</div>
-        <div class="skill-cat" data-lang="en">Orchestration &amp; DevOps</div>
+        <div class="skill-cat">MLOps &amp; DevOps</div>
         <h3 data-lang="fr">Reproductibilité</h3>
         <h3 data-lang="en">Reproducibility</h3>
         <div class="skill-tags">
-          <span class="skill-tag">Nextflow</span><span class="skill-tag">Docker</span>
-          <span class="skill-tag">Docker Compose</span><span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">Nextflow</span>
+          <span class="skill-tag">Docker · Compose</span>
+          <span class="skill-tag">GitHub Actions</span>
           <span class="skill-tag">CI/CD</span>
-          <span class="skill-tag" data-lang="fr">Gestion de configuration</span>
-          <span class="skill-tag" data-lang="en">Config management</span>
+          <span class="skill-tag" data-lang="fr">Suivi expérimental</span>
+          <span class="skill-tag" data-lang="en">Experiment tracking</span>
+          <span class="skill-tag" data-lang="fr">Tests automatisés</span>
+          <span class="skill-tag" data-lang="en">Automated testing</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -606,87 +641,160 @@
     </div>
     <div class="project-list stagger">
 
+      <!-- PROJET 1 — Labo : poumons embryon -->
       <div class="project-item">
         <div class="proj-num">01</div>
         <div>
-          <div class="proj-cat">Spatial Omics</div>
-          <h3 data-lang="fr">Pipeline de Transcriptomique Spatiale Prêt pour la Production</h3>
-          <h3 data-lang="en">Production-Ready Spatial Transcriptomics Pipeline</h3>
-          <p data-lang="fr">Pipeline entièrement automatisé et reproductible pour l'analyse de transcriptomique spatiale sur des données humaines publiques, conçu pour des workflows biotech et diagnostics.</p>
-          <p data-lang="en">A fully automated and reproducible pipeline for spatial transcriptomics analysis on public human datasets, designed with biotech and diagnostic workflows in mind.</p>
+          <span class="proj-badge badge-lab" data-lang="fr">Projet labo · Publication à venir</span>
+          <span class="proj-badge badge-lab" data-lang="en">Lab project · Paper forthcoming</span>
+          <div class="proj-cat" data-lang="fr">Imagerie Biomédicale · Biologie du Développement</div>
+          <div class="proj-cat" data-lang="en">Biomedical Imaging · Developmental Biology</div>
+          <h3 data-lang="fr">Pipeline d'Analyse Architecturale des Poumons Embryonnaires</h3>
+          <h3 data-lang="en">Embryonic Lung Architecture Analysis Pipeline</h3>
+          <p data-lang="fr">
+            Développement d'un pipeline complet pour étudier la ramification des voies aériennes
+            d'embryons humains à différents stades. À partir d'images 3D de microscopie,
+            le pipeline enchaîne assemblage, segmentation, reconstruction surfacique,
+            squelettisation et conversion en graphe — pour quantifier longueurs
+            et connexions des bronches avec une précision topologique.
+          </p>
+          <p data-lang="en">
+            End-to-end pipeline to study airway branching in human embryonic lungs across
+            developmental stages. From 3D microscopy images, the pipeline chains stitching,
+            segmentation, surface reconstruction, skeletonization and graph conversion —
+            enabling topological quantification of branch lengths and airway connectivity.
+          </p>
           <div class="proj-stack">
-            <span class="proj-tag">Nextflow</span><span class="proj-tag">Scanpy</span>
-            <span class="proj-tag">Squidpy</span><span class="proj-tag">Docker</span>
-            <span class="proj-tag">Human Visium</span>
+            <span class="proj-tag">Python</span>
+            <span class="proj-tag">scikit-image</span>
+            <span class="proj-tag">Blender</span>
+            <span class="proj-tag" data-lang="fr">Squelettisation</span>
+            <span class="proj-tag" data-lang="en">Skeletonization</span>
+            <span class="proj-tag" data-lang="fr">Analyse de graphe</span>
+            <span class="proj-tag" data-lang="en">Graph analysis</span>
+            <span class="proj-tag" data-lang="fr">Images 3D</span>
+            <span class="proj-tag" data-lang="en">3D imaging</span>
           </div>
         </div>
         <div class="proj-link-col">
-          <a href="./projects/spatial-omics-pipeline.md" class="proj-link" data-lang="fr">Voir</a>
-          <a href="./projects/spatial-omics-pipeline.md" class="proj-link" data-lang="en">View</a>
+          <a href="./projects/lung-pipeline.md" class="proj-link" data-lang="fr">Voir</a>
+          <a href="./projects/lung-pipeline.md" class="proj-link" data-lang="en">View</a>
         </div>
       </div>
 
+      <!-- PROJET 2 — Spatial Omics Engine -->
       <div class="project-item">
         <div class="proj-num">02</div>
         <div>
-          <div class="proj-cat" data-lang="fr">Analyse Multimodale</div>
-          <div class="proj-cat" data-lang="en">Multimodal Analysis</div>
-          <h3 data-lang="fr">Imagerie Multimodale × Transcriptomique</h3>
-          <h3 data-lang="en">Multimodal Imaging × Transcriptomics</h3>
-          <p data-lang="fr">Intégration de features morphologiques extraites d'images avec des données d'expression génique spatiale pour des insights biologiques multi-modaux.</p>
-          <p data-lang="en">Integration of morphological features extracted from images with spatial gene expression data to enable multi-modal biological insights.</p>
+          <span class="proj-badge badge-perso" data-lang="fr">Projet personnel</span>
+          <span class="proj-badge badge-perso" data-lang="en">Personal project</span>
+          <div class="proj-cat">Spatial Omics · MLOps</div>
+          <h3 data-lang="fr">Spatial Omics Engine — Pipeline Industrialisé</h3>
+          <h3 data-lang="en">Spatial Omics Engine — Industrialised Pipeline</h3>
+          <p data-lang="fr">
+            Transformation d'une analyse exploratoire classique en pipeline de transcriptomique
+            spatiale industrialisable : exécutable en CLI, dockerisé, paramétrable et testé
+            automatiquement. Conçu pour refléter les exigences d'un contexte pharma
+            — reproductibilité, traçabilité, séparation données/code/config.
+          </p>
+          <p data-lang="en">
+            Turning a classic exploratory analysis into an industrialisable spatial
+            transcriptomics pipeline: CLI-executable, dockerised, fully parameterised
+            and automatically tested. Designed to reflect pharma-grade requirements —
+            reproducibility, traceability, strict separation of data/code/config.
+          </p>
           <div class="proj-stack">
-            <span class="proj-tag">Python</span><span class="proj-tag">AnnData</span>
-            <span class="proj-tag">Zarr</span>
-            <span class="proj-tag" data-lang="fr">Microscopie</span>
-            <span class="proj-tag" data-lang="en">Microscopy</span>
+            <span class="proj-tag">Python · CLI</span>
+            <span class="proj-tag">Scanpy · Squidpy</span>
+            <span class="proj-tag">Docker</span>
+            <span class="proj-tag">Nextflow</span>
+            <span class="proj-tag" data-lang="fr">Tests automatisés</span>
+            <span class="proj-tag" data-lang="en">Automated testing</span>
+            <span class="proj-tag">Visium 10x</span>
           </div>
         </div>
         <div class="proj-link-col">
-          <a href="./projects/multimodal-imaging-omics.md" class="proj-link" data-lang="fr">Voir</a>
-          <a href="./projects/multimodal-imaging-omics.md" class="proj-link" data-lang="en">View</a>
+          <a href="./projects/spatial-omics-engine.md" class="proj-link" data-lang="fr">Voir</a>
+          <a href="./projects/spatial-omics-engine.md" class="proj-link" data-lang="en">View</a>
         </div>
       </div>
 
+      <!-- PROJET 3 — Multimodal Spatial AI -->
       <div class="project-item">
         <div class="proj-num">03</div>
         <div>
-          <div class="proj-cat" data-lang="fr">Ingénierie des Données</div>
-          <div class="proj-cat" data-lang="en">Data Engineering</div>
-          <h3 data-lang="fr">Plateforme de Données de Santé (Mini-Prod)</h3>
-          <h3 data-lang="en">Health Data Engineering Platform (Mini-Prod)</h3>
-          <p data-lang="fr">Plateforme de données légère simulant un stack interne biotech : ingestion, validation, stockage et accès programmatique aux résultats omiques.</p>
-          <p data-lang="en">A lightweight data platform simulating an internal biotech data stack: ingestion, validation, storage and programmatic access to omics results.</p>
+          <span class="proj-badge badge-perso" data-lang="fr">Projet personnel</span>
+          <span class="proj-badge badge-perso" data-lang="en">Personal project</span>
+          <div class="proj-cat" data-lang="fr">IA Multimodale · Microenvironnement Tumoral</div>
+          <div class="proj-cat" data-lang="en">Multimodal AI · Tumour Microenvironment</div>
+          <h3 data-lang="fr">Multimodal Spatial AI — Image × Transcriptome</h3>
+          <h3 data-lang="en">Multimodal Spatial AI — Image × Transcriptome</h3>
+          <p data-lang="fr">
+            Modèle combinant features morphologiques extraites d'images H&amp;E (CNN)
+            et expression génique spatiale (Visium) pour apprendre une représentation
+            multimodale du tissu tumoral. Problématique directement alignée avec
+            les approches développées chez Owkin : comment intégrer deux modalités
+            biologiques hétérogènes pour mieux caractériser le microenvironnement tumoral.
+          </p>
+          <p data-lang="en">
+            Model combining morphological features from H&amp;E images (CNN) with spatial
+            gene expression (Visium) to learn a multimodal tissue representation.
+            Directly aligned with approaches developed at Owkin: how to integrate
+            two heterogeneous biological modalities to better characterise
+            the tumour microenvironment.
+          </p>
           <div class="proj-stack">
-            <span class="proj-tag">Python</span><span class="proj-tag">PostgreSQL</span>
-            <span class="proj-tag">FastAPI</span><span class="proj-tag">Docker</span>
+            <span class="proj-tag">PyTorch · CNN</span>
+            <span class="proj-tag">AnnData · Visium</span>
+            <span class="proj-tag" data-lang="fr">Images H&amp;E</span>
+            <span class="proj-tag" data-lang="en">H&amp;E images</span>
+            <span class="proj-tag">CAMELYON16</span>
+            <span class="proj-tag" data-lang="fr">Représentation multimodale</span>
+            <span class="proj-tag" data-lang="en">Multimodal representation</span>
           </div>
         </div>
         <div class="proj-link-col">
-          <a href="./projects/health-data-platform.md" class="proj-link" data-lang="fr">Voir</a>
-          <a href="./projects/health-data-platform.md" class="proj-link" data-lang="en">View</a>
+          <a href="./projects/multimodal-spatial-ai.md" class="proj-link" data-lang="fr">Voir</a>
+          <a href="./projects/multimodal-spatial-ai.md" class="proj-link" data-lang="en">View</a>
         </div>
       </div>
 
+      <!-- PROJET 4 — Spatial GNN -->
       <div class="project-item">
         <div class="proj-num">04</div>
         <div>
-          <div class="proj-cat">MLOps</div>
-          <h3 data-lang="fr">Plateforme Bioinformatique Automatisée</h3>
-          <h3 data-lang="en">Automated Bioinformatics Platform</h3>
-          <p data-lang="fr">Mini-plateforme de type production pour lancer, monitorer et exposer des pipelines bioinformatiques et leurs résultats, avec CI/CD complet.</p>
-          <p data-lang="en">A mini production-like platform to launch, monitor and expose bioinformatics pipelines and results, with full CI/CD and reproducibility guarantees.</p>
+          <span class="proj-badge badge-perso" data-lang="fr">Projet personnel</span>
+          <span class="proj-badge badge-perso" data-lang="en">Personal project</span>
+          <div class="proj-cat" data-lang="fr">Graph Neural Network · Dépendances Spatiales</div>
+          <div class="proj-cat" data-lang="en">Graph Neural Network · Spatial Dependencies</div>
+          <h3 data-lang="fr">Spatial Graph Neural Network sur Visium</h3>
+          <h3 data-lang="en">Spatial Graph Neural Network on Visium</h3>
+          <p data-lang="fr">
+            Modèle GNN où chaque spot Visium est un nœud connecté à ses voisins spatiaux.
+            L'objectif : capturer les dépendances spatiales complexes que le clustering
+            classique ne modélise pas — en particulier les interactions intercellulaires
+            et les gradients d'expression dans le tissu.
+            Type de problématique recherché chez Roche ou Novartis.
+          </p>
+          <p data-lang="en">
+            GNN model where each Visium spot is a node connected to its spatial neighbours.
+            Goal: capture complex spatial dependencies that classical clustering fails
+            to model — particularly intercellular interactions and expression gradients
+            across tissue. The kind of problem actively explored at Roche or Novartis.
+          </p>
           <div class="proj-stack">
-            <span class="proj-tag">Nextflow</span><span class="proj-tag">CI/CD</span>
-            <span class="proj-tag" data-lang="fr">Monitoring</span>
-            <span class="proj-tag" data-lang="en">Monitoring</span>
-            <span class="proj-tag" data-lang="fr">Reproductibilité</span>
-            <span class="proj-tag" data-lang="en">Reproducibility</span>
+            <span class="proj-tag">PyTorch Geometric</span>
+            <span class="proj-tag">GNN</span>
+            <span class="proj-tag" data-lang="fr">Graphe spatial</span>
+            <span class="proj-tag" data-lang="en">Spatial graph</span>
+            <span class="proj-tag">Visium · AnnData</span>
+            <span class="proj-tag" data-lang="fr">Expression génique</span>
+            <span class="proj-tag" data-lang="en">Gene expression</span>
           </div>
         </div>
         <div class="proj-link-col">
-          <a href="./projects/bioinformatics-platform.md" class="proj-link" data-lang="fr">Voir</a>
-          <a href="./projects/bioinformatics-platform.md" class="proj-link" data-lang="en">View</a>
+          <a href="./projects/spatial-gnn.md" class="proj-link" data-lang="fr">Voir</a>
+          <a href="./projects/spatial-gnn.md" class="proj-link" data-lang="en">View</a>
         </div>
       </div>
 
@@ -705,24 +813,34 @@
       <div class="section-label">Publications</div>
       <h2>Scientific contributions.</h2>
     </div>
+
     <div class="pub-list stagger">
 
       <!--
         ✏️ AJOUTER UNE PUBLICATION — copie ce bloc :
 
         <div class="pub-item">
-          <div class="pub-year">2024</div>
+          <div class="pub-year">2025</div>
           <div>
-            <div class="pub-title">Titre de l'article</div>
+            <div class="pub-title">Titre de l'article / Title of the paper</div>
             <div class="pub-journal">Nom du Journal · Vol(n°) · pp. XX–XX</div>
             <div class="pub-authors">Auteur A, Auteur B, <strong>Saint-Hilaire C.</strong>, Auteur D et al.</div>
           </div>
         </div>
+
+        N'oublie pas d'ajouter le lien DOI si disponible :
+        <a href="https://doi.org/..." style="font-family:var(--mono);font-size:.68rem;color:var(--sage);text-decoration:none;margin-top:.4rem;display:inline-block;">DOI →</a>
       -->
 
       <div class="pub-empty">
-        <span data-lang="fr">Tes publications apparaîtront ici — utilise le template HTML en commentaire : <code>&lt;div class="pub-item"&gt;</code></span>
-        <span data-lang="en">Your publications will appear here — use the HTML comment template above: <code>&lt;div class="pub-item"&gt;</code></span>
+        <span data-lang="fr">
+          La publication issue du projet de thèse sur le développement pulmonaire sera ajoutée ici dès sa parution.<br>
+          Pour ajouter d'autres publications, utilise le template HTML en commentaire : <code>&lt;div class="pub-item"&gt;</code>
+        </span>
+        <span data-lang="en">
+          The publication from the lung development thesis project will be added here upon release.<br>
+          To add other publications, use the HTML comment template above: <code>&lt;div class="pub-item"&gt;</code>
+        </span>
       </div>
 
     </div>
@@ -734,16 +852,28 @@
   <div class="section-inner">
     <div class="contact-grid reveal">
       <div class="contact-left">
+
         <div data-lang="fr">
           <div class="section-label">Contact</div>
           <h2>Ouverte à la<br>bonne opportunité.</h2>
-          <p>Je recherche des postes en biotech, pharma R&amp;D, pathologie digitale ou data engineering pour la santé — Paris ou remote EU de qualité.</p>
+          <p>
+            Je recherche un poste d'ingénieure bioinformatique ou data engineer
+            en bioinformatique — dans un environnement où l'analyse d'images biologiques
+            et la génomique spatiale ont un impact réel : pharma, biotech, diagnostics,
+            ou recherche translationnelle.
+          </p>
         </div>
+
         <div data-lang="en">
           <div class="section-label">Contact</div>
           <h2>Open to the<br>right opportunity.</h2>
-          <p>Looking for roles in biotech, pharma R&amp;D, digital pathology or health data engineering — Paris-based or high-quality remote across the EU.</p>
+          <p>
+            I'm looking for a bioinformatics engineer or data engineer position
+            where biological image analysis and spatial genomics have real impact —
+            pharma, biotech, diagnostics or translational research.
+          </p>
         </div>
+
       </div>
       <div>
         <div class="contact-links">
@@ -786,44 +916,34 @@
 <!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-l">Cadisha Saint-Hilaire</div>
-  <div class="footer-r" data-lang="fr">© 2025 · Ingénieure Bioinformatique &amp; Data · Paris</div>
-  <div class="footer-r" data-lang="en">© 2025 · Bioinformatics &amp; Data Engineer · Paris</div>
+  <div class="footer-r" data-lang="fr">© 2025 · Bioinformaticienne · Imagerie &amp; Spatial Omics · Paris</div>
+  <div class="footer-r" data-lang="en">© 2025 · Bioinformatician · Imaging &amp; Spatial Omics · Paris</div>
 </footer>
 
 <script>
-  // ─── LANG SWITCHER ───
   function setLang(lang) {
     document.body.className = 'lang-' + lang;
     document.documentElement.lang = lang;
     document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.title = lang === 'fr'
-      ? 'Cadisha Saint-Hilaire | Ingénieure Bioinformatique & Data'
-      : 'Cadisha Saint-Hilaire | Bioinformatics & Data Engineer';
-    // Update nav link labels
-    document.querySelectorAll('.nav-t').forEach(a => {
-      a.textContent = a.dataset[lang];
-    });
-    // Re-trigger scroll animations for newly visible elements
+      ? 'Cadisha Saint-Hilaire | Bioinformaticienne · Imagerie & Spatial Omics'
+      : 'Cadisha Saint-Hilaire | Bioinformatician · Imaging & Spatial Omics';
+    document.querySelectorAll('.nav-t').forEach(a => { a.textContent = a.dataset[lang]; });
     document.querySelectorAll('.reveal, .stagger').forEach(el => el.classList.remove('in'));
-    setTimeout(() => {
-      document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
-    }, 50);
+    setTimeout(() => { document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el)); }, 50);
   }
 
-  // ─── SCROLL REVEAL ───
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.07 });
   document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
 
-  // ─── NAV ACTIVE ───
   const sects = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
   const ioNav = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        navLinks.forEach(a => a.classList.remove('active'));
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
         document.querySelectorAll(`.nav-links a[href="#${e.target.id}"]`).forEach(a => a.classList.add('active'));
       }
     });
